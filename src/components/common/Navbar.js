@@ -19,10 +19,10 @@ function Navbar() {
                   <div style={{width: "128px", height: "50px"}}>
                     <NavLink to="/">
                       <img
-                        src="./images/INSA PEOPLE.png"
+                        src="./images/INSAGO.png"
                         alt=""
                         width={150}
-                        height={70}
+                        height={55}
                       />
                     </NavLink>
                   </div>
