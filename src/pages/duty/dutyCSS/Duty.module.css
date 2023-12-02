@@ -1,0 +1,439 @@
+.article {
+  margin-top: 70px;
+  margin-left: 220px;
+  padding: 70px;
+}
+
+.articleContainer {
+  display: flex;
+  flex-direction: column; /* 수직으로 쌓이도록 설정 */
+  align-items: left; /* 좌우 정렬 */
+  justify-content: flex-start; /* 수직 정렬 */
+}
+
+.articleTitle {
+  margin-left: 15%;
+}
+
+.articleBox {
+  margin-right: 5%;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #999;
+  float: left;
+}
+
+.articleSubject {
+  padding-top: 25px;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: large;
+  float: left;
+}
+
+.articleContent {
+  padding-top: 25px;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: large;
+  float: left;
+}
+
+.calendarContainer {
+  display: flex;
+  flex-wrap: wrap; /* 요소가 넘칠 경우 줄바꿈 설정 */
+}
+
+.calendarDayYoil {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: large;
+  width: calc(100%/7); /* 부모요소 7등분 해서 한줄에 요일박스 7칸 들어감 */
+  height: 20px; /* 높이 설정 */
+  text-align: center;
+  line-height: 1px; /* 텍스트 세로 가운데 정렬 */
+}
+
+.calendarDayBox {
+  width: calc(100%/7); /* 부모요소 7등분 해서 한줄에 데이박스 7칸 들어감 */
+  flex-wrap: wrap; /* 요소가 넘칠 경우 줄바꿈 설정 */
+  height: 120px; /* 높이 설정 */
+  border: 1px lightgray;
+  box-sizing: border-box; /* 경계선 포함 */
+  text-align: center;
+  line-height: 100px; /* 텍스트 세로 가운데 정렬 */
+}
+
+.calendarDaySubject {
+  width: 100%;
+  height: 20px; /* 높이 설정 */
+  border: 1px solid lightgray;
+  box-sizing: border-box; /* 경계선 포함 */
+  text-align: center;
+  line-height: 20px; /* 텍스트 세로 가운데 정렬 */
+
+}
+
+.calendarDayContent {
+    width: 100%;
+    height: 90px; /* 높이 설정 */
+    border: 1px solid lightgray;
+    box-sizing: border-box; /* 경계선 포함 */
+    text-align: center;
+    line-height: 100px; /* 텍스트 세로 가운데 정렬 */
+}
+
+
+.title {
+  margin-right: 10%;
+}
+
+.box {
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-bottom: 60px;
+  width: 70%;
+  height: auto;
+  border-top: 2px solid black;
+  border-bottom: 1px solid #999;
+}
+
+.box1 {
+  margin: 50px;
+}
+
+.content1 {
+  padding-top: 25px;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: large;
+  float: left;
+}
+
+.content2 {
+  display: inline-block;
+  padding-left: 150px;
+  padding-top: 15px;
+}
+
+.workType {
+  width: 250px;
+  padding: 0.8em 0.5em;
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.workType1 {
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+.box2 {
+  margin-right: 5%;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  width: 70%;
+  height: auto;
+  border-bottom: 1px solid #999;
+  float: left;
+}
+
+.content3 {
+  display: inline-block;
+  padding-left: 200px;
+  padding-top: 15px;
+}
+
+.day {
+  width: 60px;
+  height: 60px;
+  /* background-color: #b9ddff35; */
+  color: rgb(83, 80, 80);
+  border-radius: 50%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+.active3 {
+  width: 60px;
+  height: 60px;
+  color: blue;
+  background-color: #b9ddff;
+  border-radius: 50%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+.bcontainer {
+  float: left;
+}
+
+.content5 {
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.selectDay {
+  font-size: small;
+  color: #999;
+  padding-left: 250px;
+}
+
+.basicWorkTime {
+  overflow: hidden;
+  padding-top: 22px;
+  margin-left: 190px;
+  float: left;
+}
+
+.basicWorkTime1 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  margin-right: 15px;
+  height: 30px;
+  float: left;
+}
+
+.line1 {
+  float: left;
+  padding-top: 7px;
+}
+.line2 {
+  float: left;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.basicWorkTime2 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 20px;
+  float: left;
+}
+
+.basicWorkTime3 {
+  margin-top: 3px;
+
+  margin-right: 160px;
+  float: left;
+}
+
+.content6 {
+  padding-top: 27px;
+  font-size: large;
+  padding-right: 30px;
+
+  color: #999;
+  float: left;
+}
+
+.result {
+  display: inline-block;
+  padding-top: 27px;
+  margin-top: 1.5px;
+  font-size: medium;
+  color: red;
+}
+
+.basicLunch1 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  margin-right: 15px;
+  height: 30px;
+  float: left;
+}
+
+.basicLunch2 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  margin-left: 15px;
+  height: 30px;
+}
+
+.basicLunch3 {
+  margin-top: 5px;
+  margin-left: 3px;
+}
+
+.basicLunch {
+  overflow: hidden;
+
+  padding-top: 20px;
+  margin-left: 108px;
+  float: left;
+}
+
+.availwork {
+  overflow: hidden;
+  padding-top: 5px;
+  padding-left: 100px;
+  float: left;
+}
+
+.startAvail1 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  float: left;
+  margin-right: 15px;
+}
+
+.startAvail2 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+.startAvail3 {
+  margin-top: 10px;
+  margin-left: 4px;
+  float: left;
+}
+
+.endAvail1 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  margin-right: 15px;
+  margin-left: 60px;
+}
+
+.endAvail2 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+.endAvail3 {
+  margin-left: 328px;
+  margin-top: 10px;
+}
+
+.selectDay1 {
+  font-size: small;
+  color: #999;
+  padding-left: 100px;
+  padding-right: 220px;
+  float: left;
+}
+
+.selectDay3 {
+  font-size: small;
+  color: #999;
+  padding-left: 96px;
+  padding-right: 220px;
+  float: left;
+  margin-left: 7px;
+}
+
+.selectDay2 {
+  font-size: small;
+  color: #999;
+}
+
+.selectDay4 {
+  font-size: small;
+  color: #999;
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.allTime {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 25px;
+  width: 60px;
+  float: left;
+}
+
+.allTime1 {
+  float: left;
+  margin-top: 3px;
+}
+
+.overTime {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 25px;
+  width: 60px;
+  float: left;
+  margin-bottom: 3px;
+}
+
+.overTime1 {
+  float: left;
+  margin-top: 3px;
+}
+
+.availwork1 {
+  overflow: hidden;
+
+  padding-top: 20px;
+  margin-left: 80px;
+  float: left;
+}
+
+.availwork2 {
+  overflow: hidden;
+
+  padding-top: 25px;
+  margin-left: 140px;
+  float: left;
+}
+
+.availwork3 {
+  float: left;
+}
+.availwork4 {
+  display: inline-block;
+}
+
+.workSet {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+}
+
+.workSet1 {
+  border: 1px solid #999;
+  background-color: #b9ddff35;
+  border-radius: 5px;
+  height: 30px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.box3 {
+  margin-left: 82%;
+  margin-right: 10%;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  width: 80%;
+  height: auto;
+  float: left;
+}
