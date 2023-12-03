@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../task/taskCSS/SlideToggle.css";
 import { NavLink } from "react-router-dom";
 
-function RegularDuty() {
+function Vacation() {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
@@ -12,16 +12,21 @@ function RegularDuty() {
 
   return (
     <div>
-      <button onClick={handleClick} style={{ fontSize: '17px', fontWeight: 'bold' }}>정규 근무</button>
+      <button
+        onClick={handleClick}
+        style={{ fontSize: "17px", fontWeight: "bold" }}
+      >
+        근무/휴가 신청
+      </button>
       <TransitionGroup>
         {show && (
           <CSSTransition classNames="slide" timeout={200}>
             <div>
               <div className="mt-2">
-                <NavLink to="setting">정규 근무 확인 및 설정</NavLink>
+                <NavLink to="vacationApply">휴가 신청</NavLink>
               </div>
               <div className="mt-2">
-                <NavLink to="dutyApplyStatus">정규 근무 신청 내역</NavLink>
+                <NavLink to="specialDutyApply">특별 근무 신청</NavLink>
               </div>
             </div>
           </CSSTransition>
@@ -31,4 +36,4 @@ function RegularDuty() {
   );
 }
 
-export default RegularDuty;
+export default Vacation;

@@ -136,9 +136,11 @@ function RegularDutyArticle() {
   return (
     <>
       <div className={DutyCSS.articleTitle}>
-        <h1>
-          <NavLink to="setting">정규근무 개요</NavLink>
-        </h1>
+        <div style={{ marginLeft: 50 }}>
+          <h1>
+            <NavLink to="setting">근무시간 개요</NavLink>
+          </h1>
+        </div>
       </div>
 
       <div className={DutyCSS.box1}>

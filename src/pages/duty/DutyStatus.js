@@ -1,8 +1,8 @@
 import React from "react";
 
-import DutyCSS from "../dutyCSS/Duty.module.css";
-import RegularDutyArticle from "./RegularDutyArticle";
-import DutyCalendarArticle from "./DutyCalendarArticle";
+import DutyCSS from "./dutyCSS/Duty.module.css";
+import RegularDutyArticle from "./articles/RegularDutyArticle";
+import DutyCalendarArticle from "./articles/DutyCalendarArticle";
 
 function DutyStatus() {
   /* 렌더링 영역 */
@@ -18,7 +18,7 @@ function DutyStatus() {
             </div>
           </div>
           <div style={{ flex: 1 }}>
-            {/* 오른쪽 영역 : 정규근무 개요 */}
+            {/* 오른쪽 영역 : 근무시간 개요 */}
             <RegularDutyArticle />
           </div>
         </div>

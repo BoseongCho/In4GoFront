@@ -1,14 +1,14 @@
-import ScheduleListCSS from "../dutyCSS/ScheduleList.module.css";
-import ScheduleCSS from "../dutyCSS/Schedule.module.css";
-import DutyCSS from "../dutyCSS/Duty.module.css";
+import ScheduleListCSS from "./dutyCSS/ScheduleList.module.css";
+import ScheduleCSS from "./dutyCSS/Schedule.module.css";
+import DutyCSS from "./dutyCSS/Duty.module.css";
 import React, { useEffect, useState } from "react";
-import { callScheduleManageAPI } from "../../../apis/DutyAPICalls";
-import { callScheduleManageDetailAPI } from "../../../apis/DutyDetailAPICalls";
+import { callScheduleManageAPI } from "../../apis/DutyAPICalls";
+import { callScheduleManageDetailAPI } from "../../apis/DutyDetailAPICalls";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { callScheduleManageUpdateAPI } from "../../../apis/DutyAPICalls";
+import { callScheduleManageUpdateAPI } from "../../apis/DutyAPICalls";
 
-function DutyApplyStatus() {
+function ApplyStatus() {
   const dispatch = useDispatch();
   const sclist = useSelector((state) => state.dutyReducer);
   const data2 = useSelector((state) => state.dutyDetailReducer);
@@ -76,8 +76,8 @@ function DutyApplyStatus() {
   return (
     <>
       <div className={DutyCSS.article}>
-        <div className={ScheduleCSS.sctitle1}>
-          <h3>근무 신청 내용</h3>
+        <div className={DutyCSS.articleTitle}>
+          <h1>근무/휴가 신청내역 통합검색</h1>
         </div>
 
         <div className={ScheduleCSS.scbox}>
@@ -330,4 +330,4 @@ function DutyApplyStatus() {
   );
 }
 
-export default DutyApplyStatus;
+export default ApplyStatus;

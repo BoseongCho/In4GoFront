@@ -4,9 +4,12 @@ import Layout from "./layouts/Layout";
 import TaskSidebar from "./pages/task/TaskSidebar";
 import ApprovalSubmit from "./pages/task/taskApproval/ApprovalSubmit";
 import DutyMain from "./pages/duty/DutyMain";
-import DutyStatus from "./pages/duty/article/DutyStatus";
-import DutySetting from "./pages/duty/article/DutySetting";
-import DutyApplyStatus from "./pages/duty/article/DutyApplyStatus";
+import DutyStatus from "./pages/duty/DutyStatus";
+import ApplyStatus from "./pages/duty/ApplyStatus";
+import AttendanceCalendar from "./pages/duty/AttendanceCalendar";
+import DutyManage from "./pages/duty/DutyManage";
+import SpecialDutyApply from "./pages/duty/SpecialDutyApply";
+import VacationApply from "./pages/duty/VacationApply";
 import ScheduleManage from "./pages/duty/components/ScheduleManage";
 
 function App() {
@@ -22,8 +25,11 @@ function App() {
 
           <Route path="duty" element={<DutyMain />}>
             <Route index element={<DutyStatus />} />
-            <Route path="setting" element={<DutySetting />} />
-            <Route path="dutyApplyStatus" element={<DutyApplyStatus />} />
+            <Route path="DutyManage" element={<DutyManage />} />
+            <Route path="specialDutyApply" element={<SpecialDutyApply />} />
+            <Route path="vacationApply" element={<VacationApply />} />
+            <Route path="DVApplyStatus" element={<ApplyStatus />} />
+            <Route path="AttendanceCalendar" element={<AttendanceCalendar />} />
           </Route>
         </Route>
       </Routes>

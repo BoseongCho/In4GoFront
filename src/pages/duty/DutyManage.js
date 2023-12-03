@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import {
   callDutySettingAPI,
   callDutySetUpdateAPI,
-} from "../../../apis/DutyAPICalls";
+} from "../../apis/DutyAPICalls";
 import { useDispatch, useSelector } from "react-redux";
 
-import DutyCSS from "../dutyCSS/Duty.module.css";
+import DutyCSS from "./dutyCSS/Duty.module.css";
 import { useNavigate } from "react-router-dom";
 
-function DutySetting() {
+function DutyManage() {
   const dispatch = useDispatch();
   const workSetlist = useSelector((state) => state.dutyReducer); // 선언한 store목록 중에서 dutyReducer를 가져올거다.
   console.log("workSetlist", workSetlist);
@@ -229,14 +229,14 @@ function DutySetting() {
   return (
     <>
       <div className={DutyCSS.article}>
-        <div className={DutyCSS.title}>
+        <div className={DutyCSS.articleTitle}>
           {modifyMode ? (
             <div>
-              <h1>정규근무 설정 모드</h1>
+              <h1>정규 근무시간 조정 모드</h1>
             </div>
           ) : (
             <div>
-              <h1>정규근무 현황</h1>
+              <h1>정규 근무시간 현황</h1>
             </div>
           )}
         </div>
@@ -601,35 +601,37 @@ function DutySetting() {
             </div>
           </div>
         </form>
-        <div className={`${DutyCSS["box3"]}`}>
-          {!modifyMode && (
-            <button
-              className={`${DutyCSS["workSet"]}`}
-              onClick={onClickModifyModeHandler}
-            >
-              새로 설정하기
-            </button>
-          )}
-          {modifyMode && (
-            <div>
+        <div className={`${DutyCSS["box2"]}`}>
+          <div className={`${DutyCSS["box3"]}`}>
+            {!modifyMode && (
               <button
                 className={`${DutyCSS["workSet"]}`}
-                onClick={onClickSetUpdateHandler}
+                onClick={onClickModifyModeHandler}
               >
-                저장
+                새로 설정하기
               </button>
-              <button
-                className={`${DutyCSS["workSet1"]}`}
-                onClick={() => navigate(0)}
-              >
-                돌아가기
-              </button>
-            </div>
-          )}
+            )}
+            {modifyMode && (
+              <div>
+                <button
+                  className={`${DutyCSS["workSet"]}`}
+                  onClick={onClickSetUpdateHandler}
+                >
+                  저장
+                </button>
+                <button
+                  className={`${DutyCSS["workSet1"]}`}
+                  onClick={() => navigate(0)}
+                >
+                  돌아가기
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default DutySetting;
+export default DutyManage;

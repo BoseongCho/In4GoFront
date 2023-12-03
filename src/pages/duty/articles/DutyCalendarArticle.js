@@ -97,15 +97,17 @@ function DutyCalendarArticle() {
   return (
     <>
       <div>
+        <div style={{marginBottom: 20}}>
         <h1>근무 캘린더</h1>
+        </div>
         <div className={DutyCSS.calendarContainer}>
-          <div className={DutyCSS.calendarDayYoil}>일</div>
+          <div className={DutyCSS.calendarRedDayYoil}>일</div>
           <div className={DutyCSS.calendarDayYoil}>월</div>
           <div className={DutyCSS.calendarDayYoil}>화</div>
           <div className={DutyCSS.calendarDayYoil}>수</div>
           <div className={DutyCSS.calendarDayYoil}>목</div>
           <div className={DutyCSS.calendarDayYoil}>금</div>
-          <div className={DutyCSS.calendarDayYoil}>토</div>
+          <div className={DutyCSS.calendarGrayDayYoil}>토</div>
           {dateTaskArrays.map((item, index) => (
             <div key={index} className={DutyCSS.calendarDayBox}>
               <div className={DutyCSS.calendarDaySubject}>{item.date}</div>

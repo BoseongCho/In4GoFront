@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../task/taskCSS/SlideToggle.css";
+import { NavLink } from "react-router-dom";
 
-function AdditionalMenu() {
+function RegularDuty() {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
@@ -11,13 +12,14 @@ function AdditionalMenu() {
 
   return (
     <div>
-      <button onClick={handleClick} style={{ fontSize: '17px', fontWeight: 'bold' }}>추가 메뉴</button>
+      <button onClick={handleClick} style={{ fontSize: '17px', fontWeight: 'bold' }}>관리자 메뉴</button>
       <TransitionGroup>
         {show && (
           <CSSTransition classNames="slide" timeout={200}>
             <div>
-            <div className="mt-2">월간 근태 현황</div>
-              <div className="mt-2">우리부서 스케줄 확인</div>
+              <div className="mt-2">
+                <NavLink to="DutyManage">정규 근무시간 조정</NavLink>
+              </div>
             </div>
           </CSSTransition>
         )}
@@ -26,4 +28,4 @@ function AdditionalMenu() {
   );
 }
 
-export default AdditionalMenu;
+export default RegularDuty;

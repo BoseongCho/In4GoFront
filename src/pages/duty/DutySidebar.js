@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 import Side from "../../components/common/Navbar.module.css";
-import RegularDuty from "./sidebar/RegularDuty";
-import SpecialDuty from "./sidebar/SpecialDuty";
-import Vacation from "./sidebar/Vacation";
-import AdditionalMenu from "./sidebar/AdditionalMenu";
+import ManagerMenu from "./sidebar/ManagerMenu";
+import ApplyMenu from "./sidebar/ApplyMenu";
+import StatusMenu from "./sidebar/StatusMenu";
 
 function DutySidebar() {
   return (
@@ -12,24 +11,24 @@ function DutySidebar() {
         <div className={Side.iLkxeQ}>
           <div className={Side.ecYrVX}>
             <div className={Side.pbheK}>
-              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>
-                  <NavLink to="/duty">근무/휴가</NavLink>
-
-                <hr style={{ marginTop: 30, marginBottom: 10 }} />
-                <hr style={{ marginTop: 5 }} />
-
+              <div style={{ fontSize: "25px", fontWeight: "bold" }}>
+                <div style={{ marginTop: 20, marginBottom: 40 }}>
+                <NavLink to="/duty">근무/휴가</NavLink>
+                </div>
+                <hr />
                 <ul>
+                  <li className={Side.fcngae}>
+
+                  </li>
+                  <br />
                   <li className={Side.fcngae} style={{ marginBottom: 40 }}>
-                    <RegularDuty />
+                    <StatusMenu />
                   </li>
                   <li className={Side.fcngae} style={{ marginBottom: 40 }}>
-                    <SpecialDuty />
+                    <ApplyMenu />
                   </li>
                   <li className={Side.fcngae} style={{ marginBottom: 40 }}>
-                    <Vacation />
-                  </li>
-                  <li className={Side.fcngae} style={{ marginBottom: 40 }}>
-                    <AdditionalMenu />
+                    <ManagerMenu />
                   </li>
                 </ul>
               </div>
