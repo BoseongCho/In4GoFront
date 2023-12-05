@@ -3,6 +3,7 @@ import Main from "./pages/main/Main";
 import Layout from "./layouts/Layout";
 import TaskSidebar from "./pages/task/TaskSidebar";
 import ApprovalSubmit from "./pages/task/taskApproval/ApprovalSubmit";
+import Login from "./pages/login/Login";
 import DutyMain from "./pages/duty/DutyMain";
 import DutyStatus from "./pages/duty/DutyStatus";
 import ApplyStatus from "./pages/duty/ApplyStatus";
@@ -14,6 +15,7 @@ import VacationApply from "./pages/duty/VacationApply";
 import ScheduleManage from "./pages/duty/components/ScheduleManage";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -34,6 +36,9 @@ function App() {
             <Route path="DepartmentScheduleCheck" element={<DepartmentScheduleCheck />} />
           </Route>
         </Route>
+
+        <Route path="/login" element={<Login/>}/>
+
       </Routes>
     </BrowserRouter>
   );
