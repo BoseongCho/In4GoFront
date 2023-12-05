@@ -3,6 +3,7 @@ import Main from "./pages/main/Main";
 import Layout from "./layouts/Layout";
 import TaskSidebar from "./pages/task/TaskSidebar";
 import ApprovalSubmit from "./pages/task/taskApproval/ApprovalSubmit";
+import Login from "./pages/login/Login";
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
                     </Route>
 
                 </Route>
+
+
+                <Route path="/login" element={<Login/>}/>
             </Routes>
         </BrowserRouter>
 
