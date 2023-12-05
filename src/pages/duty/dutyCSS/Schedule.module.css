@@ -1,0 +1,158 @@
+.sctitle1 {
+  margin-right: 10%;
+}
+.sctitle2 {
+  padding: 0px;
+}
+
+.scbox {
+  width: 100%;
+  height: auto;
+  border-top: 2px solid black;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.536);
+}
+.scboxx {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 60px;
+
+  height: auto;
+  background-color: rgba(226, 225, 225, 0.285);
+}
+
+.signupnam {
+  float: left;
+  padding-top: 8px;
+}
+.signupd {
+  display: inline-block;
+}
+
+.signupDay1 {
+  float: left;
+  margin-left: 10px;
+
+  border: 1px solid #999;
+  background-color: #c3edbf82;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.scset {
+  margin-top: 10px;
+  float: left;
+  margin-right: 30px;
+}
+
+.statenam {
+  margin-top: 10px;
+}
+
+.state1 {
+  float: left;
+  padding-top: 8px;
+  margin-right: 10px;
+}
+
+.state2 {
+  float: left;
+  border: 1px solid #999;
+  border-radius: 5px;
+  height: 30px;
+  width: 45px;
+  margin-right: 5px;
+}
+
+.signpeo {
+  float: left;
+  margin-right: 10px;
+  padding-top: 8px;
+}
+
+.scpeop {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.scpeople {
+  border: 1px solid #999;
+  background-color: #c3edbf82;
+  border-radius: 5px;
+  height: 30px;
+  width: 150px;
+}
+
+.scimg {
+  height: 30px;
+  width: 30px;
+}
+
+.scbox1 {
+  border-bottom: 1px solid rgba(153, 153, 153, 0.623);
+  margin-top: 5%;
+  width: 100%;
+}
+.scbox2 {
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+
+  height: auto;
+  float: left;
+}
+
+.scapprove {
+  border: 1px solid #999;
+  background-color: #fffec6;
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.sclist {
+  float: left;
+  margin-right: 700px;
+}
+
+.applthe {
+  background-color: #c3edbfa3;
+  padding: 15px 10px 15px 30px;
+}
+
+.appltablee {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 200px;
+}
+
+.appltableex {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.applthey {
+  background-color: white;
+  padding: 15px 10px 15px 30px;
+  text-align: center;
+  color: rgb(24, 93, 10);
+}
+
+.appltde {
+  padding: 15px 10px 15px 30px;
+  text-align: center;
+}
+
+.appltdex {
+  padding: 15px 10px 15px 30px;
+  text-align: center;
+  border-bottom: 1px solid #999;
+}
+
+.appltheady {
+  text-align: center;
+}

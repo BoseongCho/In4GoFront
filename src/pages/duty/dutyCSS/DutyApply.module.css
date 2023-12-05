@@ -1,0 +1,213 @@
+/* Duty.module.css */
+
+/* 전체 폼 컨테이너 스타일 */
+.article {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 제목 스타일 */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* 폼 그룹 스타일 */
+  .formGroup {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  /* 폼 그룹2 */
+  .formGroup2 {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* 폼 박스 스타일 */
+  .formBox {
+    margin: 10px;
+  }
+  
+  /* 라벨 스타일 */
+  .label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* 셀렉트 박스 스타일 */
+  .select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 날짜 선택 컴포넌트 스타일 */
+  .datePicker {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 입력 필드 스타일 */
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 텍스트 에어리어 스타일 */
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 신청(본 페이지) 버튼 스타일 */
+  .applyButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+
+  }
+
+  /* 신청(모달) 버튼 스타일 */
+  .submitButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+  }
+
+  .applyButton:hover {
+    background-color: black;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+
+  
+  /* 모달 스타일 */
+  /* 모달 내용 스타일 */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* 모달 제목 스타일 */
+  .modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* 모달 정보 스타일 */
+  .modal-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* 모달 닫기 버튼 스타일 */
+  .modal-closeButton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-closeButton:hover {
+    background-color: #999;
+  }
+
+
+  /* GaugeGraph 컴포넌트 스타일 */
+.gaugeGraph {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gaugeBar {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  transition: width 0.3s; /* 애니메이션 지속 시간 */
+}
+
+/* 가변적 게이지 바 색상 */
+.gaugeBarGood {  
+  height: 100%;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  transition: width 0.3s; /* 애니메이션 지속 시간 */
+}
+
+.gaugeBarWarning {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #ff9800;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  transition: width 0.3s; /* 애니메이션 지속 시간 */
+}
+
+.gaugeBarDanger {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  transition: width 0.3s; /* 애니메이션 지속 시간 */
+}
