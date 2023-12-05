@@ -23,10 +23,10 @@ function Vacation() {
           <CSSTransition classNames="slide" timeout={200}>
             <div>
             <div className="mt-2">
-                <NavLink to="specialDutyApply">특별 근무 신청</NavLink>
+                <NavLink to="SpecialDutyApply">특별 근무 신청</NavLink>
               </div>
               <div className="mt-2">
-                <NavLink to="vacationApply">휴가 신청</NavLink>
+                <NavLink to="VacationApply">휴가 신청</NavLink>
               </div>
             </div>
           </CSSTransition>

@@ -7,6 +7,7 @@ import DutyMain from "./pages/duty/DutyMain";
 import DutyStatus from "./pages/duty/DutyStatus";
 import ApplyStatus from "./pages/duty/ApplyStatus";
 import AttendanceCalendar from "./pages/duty/AttendanceCalendar";
+import DepartmentScheduleCheck from "./pages/duty/DepartmentScheduleCheck";
 import DutyManage from "./pages/duty/DutyManage";
 import SpecialDutyApply from "./pages/duty/SpecialDutyApply";
 import VacationApply from "./pages/duty/VacationApply";
@@ -26,10 +27,11 @@ function App() {
           <Route path="duty" element={<DutyMain />}>
             <Route index element={<DutyStatus />} />
             <Route path="DutyManage" element={<DutyManage />} />
-            <Route path="specialDutyApply" element={<SpecialDutyApply />} />
-            <Route path="vacationApply" element={<VacationApply />} />
+            <Route path="SpecialDutyApply" element={<SpecialDutyApply />} />
+            <Route path="VacationApply" element={<VacationApply />} />
             <Route path="DVApplyStatus" element={<ApplyStatus />} />
             <Route path="AttendanceCalendar" element={<AttendanceCalendar />} />
+            <Route path="DepartmentScheduleCheck" element={<DepartmentScheduleCheck />} />
           </Route>
         </Route>
       </Routes>

@@ -156,3 +156,39 @@
 .appltheady {
   text-align: center;
 }
+
+
+
+
+/* 간트 차트 스케쥴 모듈 */
+.chartContainer {
+  width: 100%; /* 차트의 너비를 조절할 수 있습니다. */
+  height: auto; /* 차트의 높이를 조절할 수 있습니다. */
+  overflow: auto;
+}
+
+.weekNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chartRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chartLabel {
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.chartBar {
+  flex-grow: 1;
+  height: 20px; /* 간트 차트의 높이를 조절할 수 있습니다. */
+  background-color: #007bff; /* 간트 차트의 색상을 조절할 수 있습니다. */
+}

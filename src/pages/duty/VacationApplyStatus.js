@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { callScheduleManageUpdateAPI } from "../../apis/DutyAPICalls";
 
-function ApplyStatus() {
+function VacationApplyStatus() {
   const dispatch = useDispatch();
   const sclist = useSelector((state) => state.dutyReducer);
   const data2 = useSelector((state) => state.dutyDetailReducer);
@@ -330,4 +330,4 @@ function ApplyStatus() {
   );
 }
 
-export default DutyApplyStatus;
+export default VacationApplyStatus;

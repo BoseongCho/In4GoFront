@@ -23,12 +23,19 @@ function StatusMenu() {
           <CSSTransition classNames="slide" timeout={200}>
             <div>
               <div className="mt-2">
-                <NavLink to="/duty/AttendanceCalendar">근무/휴가 캘린더</NavLink>
+                <NavLink to="/duty/AttendanceCalendar">
+                  근무/휴가 캘린더
+                </NavLink>
               </div>
               <div className="mt-2">
                 <NavLink to="/duty/DVApplyStatus">근무/휴가 통합검색</NavLink>
               </div>
-              <div className="mt-2">우리 부서 스케줄 확인</div>
+              <div className="mt-2">
+                우리 부서 스케줄 확인
+                <NavLink to="/duty/DepartmentScheduleCheck">
+                  근무/휴가 캘린더
+                </NavLink>
+              </div>
             </div>
           </CSSTransition>
         )}
