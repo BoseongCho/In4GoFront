@@ -232,15 +232,6 @@ table {
 
 input {
   writing-mode: horizontal-tb !important;
-  font-style: ;
-  font-variant-ligatures: ;
-  font-variant-caps: ;
-  font-variant-numeric: ;
-  font-variant-east-asian: ;
-  font-weight: ;
-  font-stretch: ;
-  font-size: ;
-  font-family: ;
   text-rendering: auto;
   color: fieldtext;
   letter-spacing: normal;
@@ -574,11 +565,6 @@ select {
   font-variant-ligatures: ;
   font-variant-caps: ;
   font-variant-numeric: ;
-  font-variant-east-asian: ;
-  font-weight: ;
-  font-stretch: ;
-  font-size: ;
-  font-family: ;
   text-rendering: auto;
   color: fieldtext;
   letter-spacing: normal;
@@ -665,6 +651,14 @@ select.form-control,
 .badge-green {
   background: #e2ffee;
   color: #08ab74 !important;
+}
+.badge-red {
+  background: #ff3d3d;
+  color: #ffffff !important;
+}
+.badge-yellow {
+  background: #faa35c;
+  color: #ffffff !important;
 }
 .badge {
   display: inline-block;
