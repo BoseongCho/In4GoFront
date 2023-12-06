@@ -81,7 +81,7 @@ function SchedulManage() {
       <div className={ScheduleCSS.scbox}>
         <div className={ScheduleCSS.scboxx}>
           <div className={ScheduleCSS.scset}>
-            <div className={ScheduleCSS.signupnam}>신청일자</div>
+            <div className={ScheduleCSS.signupName}>신청일자</div>
             <div className={ScheduleCSS.signupd}>
               <input
                 id="signupDay1"
@@ -96,7 +96,7 @@ function SchedulManage() {
             </div>
           </div>
 
-          <div className={ScheduleCSS.statenam}>
+          <div className={ScheduleCSS.stateName}>
             <div className={ScheduleCSS.state1}>승인상태</div>
             <button
               style={getBtnStyle(0)}
