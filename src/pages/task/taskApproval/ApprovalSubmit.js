@@ -7,6 +7,7 @@ import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';
 import {callGetApprovalAPI} from "../../../apis/ApprovalAPICalls";
 import Pagination from "../components/Pagination";
+import ApprovalModal from "../components/ApprovalModal";
 
 function ApprovalSubmit() {
 
@@ -171,7 +172,7 @@ function ApprovalSubmit() {
                                                         data-bs-target="#staticBackdrop">
                                                     결재 작성하기
                                                 </button>
-                                                {/*<ApprovalModal/>*/}
+                                                <ApprovalModal/>
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +223,7 @@ function ApprovalSubmit() {
                                                         <td>{a.docCode}</td>
                                                         <td>{a.title}</td>
                                                         <td><span
-                                                            className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행중' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
+                                                            className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
                                                         </td>
                                                         {/*추후 수정 요망*/}
                                                         <td>{a.docAttachmentList?.length}</td>

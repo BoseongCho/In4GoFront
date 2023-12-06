@@ -1,0 +1,192 @@
+.form-control, .bootstrap-select .btn {
+    height: 44px;
+    padding: 6px 16px 9px 16px;
+    padding-right: 30px;
+    background-color: #fafafa !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    border: 2px solid #e8e8e8 !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(1.5 * 10px);
+    color: #484848;
+}
+.modal-body-content .form-group {
+    margin: 24px 0;
+}
+.modal-body-content {
+    color: #767676;
+}
+.micro {
+    font-size: 10px;
+    color: #767676;
+}
+.form-control.bg-white {
+    background-color: #fff!important;
+}
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+}
+.d-flex-space {
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+.file-drop-zone {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 2px;
+    border: 2px dashed #eee;
+    background-color: #fafafa;
+    color: #bdbdbd;
+    outline: none;
+    transition: border .24s ease-in-out;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.iBqTtj {
+    width: 100%;
+    position: relative;
+}
+.iBqTtj .apv-wrapper {
+    border-width: 1px 1px 0px;
+    border-style: solid;
+    border-color: rgb(224, 224, 224);
+    border-image: initial;
+    padding: 10px;
+    height: calc(100% - 220px);
+    overflow: auto;
+}
+.table-fixed {
+    table-layout: fixed;
+}
+.table {
+    display: table;
+}
+.table {
+    margin: 0;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.table thead th {
+    height: 24px;
+    padding: 4px;
+    border: 0;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #767676;
+}
+.hMOodW:nth-child(1) {
+    width: 50px;
+}
+.hMOodW:nth-child(2) {
+    width:  80px;
+}
+.hMOodW:nth-child(3) {
+    width:  50px;
+}
+.hMOodW:nth-child(4) {
+    width:  100%;
+}
+
+.cWjmER {
+    color: rgb(118, 118, 118);
+    padding-left: 0px !important;
+}
+.iBqTtj .cr-wrapper {
+    padding: 10px;
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: rgb(224, 224, 224);
+    border-image: initial;
+    width: 100%;
+    overflow: auto;
+    height: 100px;
+}
+.zApTA {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.bzwmyz {
+    background-color: rgb(245, 245, 245);
+    padding: 5px;
+    /* display: flex; */
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 5px 0px;
+}
+.appTbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table tbody > tr > * {
+    height: 44px;
+    max-height: 44px;
+    border: 0;
+    padding: 8px 4px;
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: 500;
+    vertical-align: middle;
+    color: #484848;
+}
+.gIRdvs {
+    padding: 4px !important;
+}
+.gmJlZF {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.cMWDrM {
+    background-color: rgb(245, 245, 245);
+    padding: 5px;
+    margin: 10px 0px;
+}
+.mr-3 {
+    margin-right: 0.75rem;
+}
+
+input[type="file" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+}
+
+.getInfo{
+    font-size:15px;
+    cursor: pointer;
+}

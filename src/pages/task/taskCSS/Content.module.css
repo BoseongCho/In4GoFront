@@ -143,7 +143,6 @@ h2 {
 }
 
 .input-datepicker {
-  background-image: url();
   background-repeat: no-repeat;
   background-position: right 12px center;
 }
@@ -561,10 +560,6 @@ select:not(:-internal-list-box) {
 }
 select {
   writing-mode: horizontal-tb !important;
-  font-style: ;
-  font-variant-ligatures: ;
-  font-variant-caps: ;
-  font-variant-numeric: ;
   text-rendering: auto;
   color: fieldtext;
   letter-spacing: normal;
@@ -638,7 +633,7 @@ select.form-control,
 .bootstrap-select .dropdown-toggle {
   padding-right: 3em;
   box-shadow: none !important;
-  background: #fafafa url() no-repeat right 12px center !important;
+  background: #fafafa no-repeat right 12px center !important;
   text-align: left;
   color: #484848 !important;
 }
@@ -653,12 +648,12 @@ select.form-control,
   color: #08ab74 !important;
 }
 .badge-red {
-  background: #ff3d3d;
-  color: #ffffff !important;
+  background: #ffc5c5;
+  color: #fa2929 !important;
 }
 .badge-yellow {
-  background: #faa35c;
-  color: #ffffff !important;
+  background: #f3e5f5;
+  color: #6a1b9a !important;
 }
 .badge {
   display: inline-block;
