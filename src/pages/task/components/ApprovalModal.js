@@ -5,6 +5,7 @@ import Xmark from "../../../components/icon/Xmark";
 import Ek from "../taskApproval/Ek";
 import {CLEAR_INFO} from "../../../modules/ModalModule";
 import '../taskCSS/MakeApproval.css';
+import {callGetSearchInfoAPI} from "../../../apis/ApprovalAPICalls";
 
 function ApprovalModal() {
 
@@ -83,6 +84,16 @@ function ApprovalModal() {
         setDocAttachments(fileArray);
     }
 
+    const searchInfoHandler = (e) => {
+        const nameOrPosition = document.querySelector('#searchValue1').value; //이름 or 직급
+        const inputValue = e.target.value;
+
+        if (inputValue?.length >= 2) { // 2글자 이상 입력 시 api호출.
+
+            dispatch(callGetSearchInfoAPI({ nameOrPosition, inputValue }));
+        }
+    }
+
     return (
         <>
             <div className="modal fade modal-dialog-scrollable " id="staticBackdrop" data-bs-backdrop="static"
@@ -129,10 +140,11 @@ function ApprovalModal() {
                                                 </div>
                                                 <div>
                                                     <div tabIndex={0} className="file-drop-zone" onClick={onClickFileHandler}>
-                                                    <input multiple type="file" autoComplete="off" tabIndex={-1}
-                                                           style={{display: "none"}} onChange={fileUploadHandler} />
-                                                    <p>파일을 드래그 앤 드롭하거나 여기를 클릭해주세요.</p>
-                                                </div>
+                                                        <input multiple type="file" autoComplete="off" tabIndex={-1}
+                                                               style={{ display: "none" }}
+                                                               onChange={fileUploadHandler} />
+                                                        <p>파일을 드래그 앤 드롭하거나 여기를 클릭해주세요.</p>
+                                                    </div>
                                             </div>
                                             <div className="mt-1">
                                                 {docAttachments?.length > 0 && docAttachments.map((file) => (
@@ -142,14 +154,14 @@ function ApprovalModal() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="form-group">
-                                        <p className="h6">관련문서</p>
-                                        <div className="position-relative">
-                                            <div className="text-primary cursor-pointer mt-1">
-                                                + 관련문서 첨부하기
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {/*<div className="form-group">*/}
+                                    {/*    <p className="h6">관련문서</p>*/}
+                                    {/*    <div className="position-relative">*/}
+                                    {/*        <div className="text-primary cursor-pointer mt-1">*/}
+                                    {/*            + 관련문서 첨부하기*/}
+                                    {/*        </div>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
                                     <div className="">
                                         <div>
                                             <div>
@@ -271,12 +283,13 @@ function ApprovalModal() {
                                                 </label>
                                             </div>
                                             <input type="text" id="searchInput"
-                                                   style={{width: '200px', display: 'block'}}/>
-                                            {/*onChange={searchInfoHandler} />*/}
+                                                   style={{width: '200px', display: 'block'}} onChange={searchInfoHandler} />
                                         </div>
                                         {getInfo.length > 0 && getInfo.map((a, index) => (
                                             <div className="mt-2" key={index}>
-                                                {/*<span className="getInfo" onClick={() => onClickapproverListHandler(a)}>{a.memName} | {a.departmentCode.departmentName} | {a.positionCode.positionName} </span>*/}
+                                                <span className="getInfo" onClick={() => onClickapproverListHandler(a)}>
+                                                    {a.memName} | {a.departmentCode.departmentName} | {a.positionCode.positionName}
+                                                </span>
                                             </div>
                                         ))}
                                     </div>
@@ -285,7 +298,7 @@ function ApprovalModal() {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        {/*<button id="closeModal" type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={closeModalHandler}>취소</button>*/}
+                        <button id="closeModal" type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={closeModalHandler}>취소</button>
                         {/*<button type="button" className="btn btn-primary" onClick={onClickSendFormHandler}>상신</button>*/}
                     </div>
                 </div>
