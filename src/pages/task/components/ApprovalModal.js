@@ -66,7 +66,7 @@ function ApprovalModal() {
             content: ''
         })
         setDocAttachments([]);
-        // dispatch({ type: CLEAR_INFO });
+        dispatch({ type: CLEAR_INFO });
     }
 
     const onClickFileHandler = () => {
@@ -92,6 +92,32 @@ function ApprovalModal() {
 
             dispatch(callGetSearchInfoAPI({ nameOrPosition, inputValue }));
         }
+    }
+
+    const onClickapproverListHandler = (a) => {
+        const approverOrReferee = document.querySelector('input[name="checkApprover"]:checked + label').textContent; //결재자 or 참조
+        if(approverOrReferee === '결재자'){
+            const approverList = form.approverList;
+            approverList.push(a);
+            setForm({
+                ...form,
+                approverList: approverList
+            })
+        } else if(approverOrReferee === '참조'){
+
+            const refereeList = form.refereeList;
+            refereeList.push(a);
+
+            setForm({
+                ...form,
+                refereeList: refereeList
+            });
+        }
+
+        document.querySelector('#searchInput').value = null;
+
+        dispatch({ type: CLEAR_INFO, payload: [] });
+
     }
 
     return (

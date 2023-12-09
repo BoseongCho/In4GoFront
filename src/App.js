@@ -22,7 +22,8 @@ function App() {
           <Route index element={<Main />} />
 
           <Route path="task" element={<TaskSidebar />}>
-            <Route path="submit" element={<ApprovalSubmit />} />
+            <Route index element={<ApprovalSubmit />} />
+            <Route index path="submit" element={<ApprovalSubmit />} />
           </Route>
 
           <Route path="duty" element={<DutyMain />}>
