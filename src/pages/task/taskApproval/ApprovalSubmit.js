@@ -6,6 +6,8 @@ import NavCSS from '../taskCSS/Content.module.css'
 import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';
 import {callGetApprovalAPI} from "../../../apis/ApprovalAPICalls";
+import Pagination from "../components/Pagination";
+import ApprovalModal from "../components/ApprovalModal";
 
 function ApprovalSubmit() {
 
@@ -22,7 +24,7 @@ function ApprovalSubmit() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = decodeJwt(window.localStorage.getItem("accessToken"));
-    // const auth = token.auth;
+    const auth = token.auth;
 
     const approvals = useSelector(state => state.approvalReducer);
     const approvalList = approvals.data || approvals;
@@ -76,15 +78,24 @@ function ApprovalSubmit() {
         // }, 50); //화면을 다시 그려주기 위한 state값 변경..
     }
 
+    const getApprovalStatusClassName = (status) => {
+        if (status === 'W') {
+            return `${NavCSS["badge"]} ${NavCSS["badge-yellow"]}`;
+        } else if (status === 'Y') {
+            return `${NavCSS["badge"]} ${NavCSS["badge-green"]}`;
+        } else {
+            return `${NavCSS["badge"]} ${NavCSS["badge-red"]}`;
+        }
+    }
+
     useEffect(
         () => {
-            // console.log('token', token.sub);
-            // console.log('auth', auth);
+            console.log('token', token.sub);
+            console.log('auth', auth);
             console.log();
-            // console.log(token.auth.include('ROLE_INSA1'));
             if (token !== null) {
                 dispatch(callGetApprovalAPI({
-                    // memCode: token.sub,
+                    memCode: token.sub,
                     currentPage: currentPage
                 }));
             }
@@ -161,7 +172,7 @@ function ApprovalSubmit() {
                                                         data-bs-target="#staticBackdrop">
                                                     결재 작성하기
                                                 </button>
-                                                {/*<ApprovalModal/>*/}
+                                                <ApprovalModal/>
                                             </div>
                                         </div>
                                     </div>
@@ -212,8 +223,9 @@ function ApprovalSubmit() {
                                                         <td>{a.docCode}</td>
                                                         <td>{a.title}</td>
                                                         <td><span
-                                                            className={`${NavCSS["badge"]} ${NavCSS["badge-green"]}`}>{a.isApproved == 'W' ? '진행중' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
+                                                            className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
                                                         </td>
+                                                        {/*추후 수정 요망*/}
                                                         <td>{a.docAttachmentList.length}</td>
                                                         <td>0개</td>
                                                         <td>{a.reportDate.substring(0, 16).replace('T', ' ')}</td>
@@ -226,9 +238,9 @@ function ApprovalSubmit() {
                                             }
                                             </tbody>
                                         </table>
-                                        {/*{Array.isArray(approvals.data) && <Pagination currentPage={currentPage}*/}
-                                        {/*                                              setCurrentPage={setCurrentPage}*/}
-                                        {/*                                              pageInfo={pageInfo}/>}*/}
+                                        {Array.isArray(approvals.data) && <Pagination currentPage={currentPage}
+                                                                                      setCurrentPage={setCurrentPage}
+                                                                                      pageInfo={pageInfo}/>}
                                     </div>
 
                                 </div>

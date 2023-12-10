@@ -1,7 +1,7 @@
-
-a{color:inherit;text-decoration:none}
-
-
+@charset "utf-8";
+/* @import url(icon.css?version=2020.06.16); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 #root {
   width: 100%;
 }
@@ -23,7 +23,7 @@ div {
   background-color: rgb(255, 255, 255);
 }
 .bwzYVU {
-   position: fixed;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -80,7 +80,7 @@ img {
 }
 
 .lkOGXI {
-  margin-left: 70px;
+  margin-left: 51px;
   white-space: nowrap;
 }
 
@@ -173,22 +173,22 @@ button {
 .bfYjzh {
 
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 9px 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    font-family: inherit;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 20px;
-    /* background-color: var(--colors-blue400); */
-    text-decoration: none;
-    white-space: nowrap;
-    vertical-align: top;
-    cursor: pointer;
-    color: var(--colors-white);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 20px;
+  /* background-color: var(--colors-blue400); */
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  color: var(--colors-white);
 
 
 }
@@ -209,7 +209,7 @@ svg:not(:root) {
   position: fixed;
   top: 80px;
   left: 0px;
-  width: 220px;
+  width: 240px;
   height: calc(100vh - 80px);
   padding: 32px;
   z-index: 200;
@@ -219,7 +219,7 @@ svg:not(:root) {
   position: fixed;
   top: 81px;
   left: 0px;
-  width: 220px;
+  width: 240px;
   height: calc(100vh - 80px);
   background-color: rgb(249, 249, 249);
   overflow-x: hidden;
@@ -253,6 +253,7 @@ svg:not(:root) {
 .fcngae {
   font-size: 16px;
   font-weight: 500;
+  margin: 12px 0px 0px;
   word-break: keep-all;
   color: rgb(85, 94, 127);
   cursor: pointer;
@@ -285,6 +286,10 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+}
+
+body, input, textarea, select, button, table {
+  font-family: 'Noto Sans JP', 'Noto Sans KR', 'SF Pro KR', 'SF Pro Text', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', 'roboto', sans-serif;
 }
 .ebDIkT {
   display: flex;

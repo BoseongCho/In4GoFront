@@ -10,7 +10,8 @@ const approvalReducer = handleActions(
         [GET_APPROVAL]: (state, { payload }) => {
 
             return payload;
-        }
+        },
+
     },
     initialState
 )
