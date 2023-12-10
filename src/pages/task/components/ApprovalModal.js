@@ -129,7 +129,14 @@ function ApprovalModal() {
 
     const onClickSendFormHandler = () => {
 
-        dispatch(callPostApprovalAPI(form));
+        const formData = new FormData();
+        if(docAttachments?.length !== 0){
+            for(let i = 0; i < docAttachments.length; i++){
+                formData.append("file", docAttachments[i]);
+            }
+        }
+
+        dispatch(callPostApprovalAPI(form, formData));
             // .then(() => {document.querySelector('#closeModal').click()});
         // window.alert('등록 성공');
     }
@@ -232,7 +239,7 @@ function ApprovalModal() {
                                                                     onMouseOver={() => mouseOverHandler({ index, type: 'approver' })} onMouseOut={mouseOutHandler}
                                                                 >
                                                                     <td className="sc-jIILKH gIRdvs">
-                                                                        <div>{index + 1}</div>
+                                                                        <div className="cMW">{index + 1}</div>
                                                                     </td>
                                                                     <td className="sc-jIILKH gIRdvs">
                                                                         <div className="sc-gGvHcT gmJlZF">

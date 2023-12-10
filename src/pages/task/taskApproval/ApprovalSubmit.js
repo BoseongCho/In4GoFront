@@ -226,7 +226,7 @@ function ApprovalSubmit() {
                                                             className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
                                                         </td>
                                                         {/*추후 수정 요망*/}
-                                                        <td>{a.docAttachmentList?.length}</td>
+                                                        <td>{a.docAttachmentList.length}</td>
                                                         <td>0개</td>
                                                         <td>{a.reportDate.substring(0, 16).replace('T', ' ')}</td>
                                                     </tr>
