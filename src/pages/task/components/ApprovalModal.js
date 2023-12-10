@@ -5,7 +5,7 @@ import Xmark from "../../../components/icon/Xmark";
 import Ek from "../taskApproval/Ek";
 import {CLEAR_INFO} from "../../../modules/ModalModule";
 import '../taskCSS/MakeApproval.css';
-import {callGetSearchInfoAPI} from "../../../apis/ApprovalAPICalls";
+import {callGetSearchInfoAPI, callPostApprovalAPI} from "../../../apis/ApprovalAPICalls";
 
 function ApprovalModal() {
 
@@ -45,7 +45,7 @@ function ApprovalModal() {
         let temp = [];
 
         type === "approver" ? temp = form.approverList : temp = form.refereeList;
-
+        // 주소값을 복사한 뒤 splice로 원본에 영향을 준다.
         temp.splice(index, 1);
         dispatch({type: CLEAR_INFO});
     }
@@ -107,17 +107,31 @@ function ApprovalModal() {
 
             const refereeList = form.refereeList;
             refereeList.push(a);
-
             setForm({
                 ...form,
                 refereeList: refereeList
             });
         }
 
-        document.querySelector('#searchInput').value = null;
+            document.querySelector('#searchInput').value = null;
+        console.log("참조/결재자의 memCode : " + a.memCode)
+        dispatch({ type: CLEAR_INFO });
+    }
+    const mouseOverHandler = ({index, type}) => {
+        setMouseOverIndex(index);
+        setWhereMouseAt(type);
+    }
 
-        dispatch({ type: CLEAR_INFO, payload: [] });
+    const mouseOutHandler = () => {
+        setMouseOverIndex('');
+        setWhereMouseAt('');
+    }
 
+    const onClickSendFormHandler = () => {
+
+        dispatch(callPostApprovalAPI(form));
+            // .then(() => {document.querySelector('#closeModal').click()});
+        // window.alert('등록 성공');
     }
 
     return (
@@ -215,7 +229,7 @@ function ApprovalModal() {
 
                                                             {form.approverList?.length > 0 && form.approverList.map((a, index) => (
                                                                 <tr key={index} className="sc-UpCWa kiPXzL no-select"
-                                                                    // onMouseOver={() => mouseOverHandler({ index, type: 'approver' })} onMouseOut={mouseOutHandler}
+                                                                    onMouseOver={() => mouseOverHandler({ index, type: 'approver' })} onMouseOut={mouseOutHandler}
                                                                 >
                                                                     <td className="sc-jIILKH gIRdvs">
                                                                         <div>{index + 1}</div>
@@ -273,9 +287,8 @@ function ApprovalModal() {
                                                                 <div className="mr-3" key={index}
                                                                      onClick={() => onClickXmarkHandler({
                                                                          index,
-                                                                         type: 'referee'
-                                                                     })}>
-                                                                    {/*// onMouseOver={() => mouseOverHandler({ index, type: 'referee' })} onMouseOut={mouseOutHandler}>*/}
+                                                                         type: 'referee'})}
+                                                                     onMouseOver={() => mouseOverHandler({ index, type: 'referee' })} onMouseOut={mouseOutHandler}>
                                                                     <span
                                                                         className="sc-jNJNQp bzwmyz">{r.positionCode.positionName}: {r.memName}</span>
                                                                     {mouseOverIndex === index && whereMouseAt === 'referee' &&
@@ -325,7 +338,7 @@ function ApprovalModal() {
                     </div>
                     <div className="modal-footer">
                         <button id="closeModal" type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={closeModalHandler}>취소</button>
-                        {/*<button type="button" className="btn btn-primary" onClick={onClickSendFormHandler}>상신</button>*/}
+                        <button type="button" className="btn btn-primary" onClick={onClickSendFormHandler}>상신</button>
                     </div>
                 </div>
             </div>

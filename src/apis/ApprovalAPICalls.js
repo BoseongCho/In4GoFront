@@ -1,5 +1,5 @@
 import {GET_APPROVAL} from "../modules/ApprovalModule";
-import {GET_APPROVAL_SEARCHINFO} from "../modules/ModalModule";
+import {GET_APPROVAL_SEARCHINFO, POST_APPROVAL_INSERT} from "../modules/ModalModule";
 
 
 export const callGetApprovalAPI = ({memCode, currentPage}) => {
@@ -47,4 +47,22 @@ export const callGetSearchInfoAPI = ({nameOrPosition, inputValue}) => {
         }
     }
 };
+
+export const callPostApprovalAPI = (form) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval/insert`;
+
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+            },
+            body: JSON.stringify(form)
+        })
+            .then(response => response.json())
+        console.log('insert 성공...');
+        dispatch({ type: POST_APPROVAL_INSERT, payload : {} }); }
+}
 
