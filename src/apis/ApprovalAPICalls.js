@@ -79,3 +79,24 @@ export const callPostApprovalAPI = (form, formData) => {
         dispatch({ type: POST_APPROVAL_INSERT, payload : {} }); }
 }
 
+
+export const callGetSearchApprovalAPI = ({memCode, startDate, endDate}) =>{
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval/search?memCode=${memCode}&startDate=${startDate}&endDate=${endDate}`;
+
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method : "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            }
+        }).then(response => response.json());
+        if(result.status === 200){
+            console.log('[ApprovalAPICalls] callGetSearchApprovalAPI RESULT : ', result);
+            dispatch({ type: GET_APPROVAL, payload: result.data });
+        }
+    }
+
+}

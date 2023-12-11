@@ -5,13 +5,12 @@ import {useNavigate} from "react-router-dom";
 import NavCSS from '../taskCSS/Content.module.css'
 import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';
-import {callGetApprovalAPI} from "../../../apis/ApprovalAPICalls";
+import {callGetApprovalAPI, callGetSearchApprovalAPI} from "../../../apis/ApprovalAPICalls";
 import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
 
 function ApprovalSubmit() {
 
-    // const [isCalendar, setIsCalendar] = useState(false);
     const [form, setForm] = useState({
         startDate: '',
         endDate: ''
@@ -34,12 +33,13 @@ function ApprovalSubmit() {
     const [currentPage, setCurrentPage] = useState(1);
 
     const onChangeCalendarHandler = (e) => {
-        // e : 이벤트의 모든 정보를 담고있다.
-        // console.log(e.target); // 어디에 적용되있는가를 찾는다.
-        //
+        // 클릭하는 순간 ref의 값은 변경되어 조건문에 들어가지만,
+        // state의 값은 이후에 변하기 때문에 value값이 변하지 않는다.
+        // 반면 state의 값을 주지 않고 ref의 값만으로 한다면, 조건에 상관없이 값이 변한다.
         if (endDate.current.value !== '' && endDate.current.value < startDate.current.value) {
             alert('종료일이 더 작을 수 없습니다.')
-        } else {
+        }
+        else {
             setForm({
                 ...form,
                 [e.target.name]: e.target.value,
@@ -48,15 +48,15 @@ function ApprovalSubmit() {
     };
 
     const onClickSearchHandler = () => {
-        // if (startDate.current.value !== '' && endDate.current.value !== '') {
-        //     dispatch(callGetSearchApprovalAPI({
-        //         memCode: token.sub,
-        //         startDate: startDate.current.value,
-        //         endDate: endDate.current.value
-        //     }));
-        // } else {
-        //     alert('검색 날짜를 선택해주세요.');
-        // }
+        if (startDate.current.value !== '' && endDate.current.value !== '') {
+            dispatch(callGetSearchApprovalAPI({
+                memCode: token.sub,
+                startDate: startDate.current.value,
+                endDate: endDate.current.value
+            }));
+        } else {
+            alert('검색 날짜를 선택해주세요.');
+        }
     }
 
     const onClickBookmarkHandler = (docCode, bookmark) => {
@@ -225,7 +225,6 @@ function ApprovalSubmit() {
                                                         <td><span
                                                             className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
                                                         </td>
-                                                        {/*추후 수정 요망*/}
                                                         <td>{a.docAttachmentList.length}</td>
                                                         <td>0개</td>
                                                         <td>{a.reportDate.substring(0, 16).replace('T', ' ')}</td>
