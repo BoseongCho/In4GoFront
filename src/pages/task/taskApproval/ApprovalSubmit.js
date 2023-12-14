@@ -5,9 +5,15 @@ import {useNavigate} from "react-router-dom";
 import NavCSS from '../taskCSS/Content.module.css'
 import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';
-import {callGetApprovalAPI, callGetSearchApprovalAPI} from "../../../apis/ApprovalAPICalls";
+import {
+    callDeleteBookmarkAPI,
+    callGetApprovalAPI,
+    callGetSearchApprovalAPI,
+    callPostBookmarkAPI
+} from "../../../apis/ApprovalAPICalls";
 import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
+import {RE_WRITE_PAGE} from "../../../modules/ApprovalModule";
 
 function ApprovalSubmit() {
 
@@ -29,7 +35,7 @@ function ApprovalSubmit() {
     const approvalList = approvals.data || approvals;
     const pageInfo = approvals.pageInfo;
 
-    const [isBookmark, setIsBookmark] = useState();
+    const [isBookmark, setIsBookmark] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
 
     const onChangeCalendarHandler = (e) => {
@@ -38,8 +44,7 @@ function ApprovalSubmit() {
         // 반면 state의 값을 주지 않고 ref의 값만으로 한다면, 조건에 상관없이 값이 변한다.
         if (endDate.current.value !== '' && endDate.current.value < startDate.current.value) {
             alert('종료일이 더 작을 수 없습니다.')
-        }
-        else {
+        } else {
             setForm({
                 ...form,
                 [e.target.name]: e.target.value,
@@ -59,20 +64,24 @@ function ApprovalSubmit() {
         }
     }
 
-    const onClickBookmarkHandler = (docCode, bookmark) => {
+    const onClickBookmarkHandler = async (docCode, bookmark, index) => {
 
         const form = {
-            // memCode: token.sub,
+            memCode: token.sub,
             "docCode": docCode
         }
 
-        // bookmark == null ? dispatch(callPostBookmarkAPI({form: form})).then(() => {
-        //         setIsBookmark(!isBookmark)
-        //     })
-        //     : dispatch(callDeleteBookmarkAPI({form: form})).then(() => {
-        //         setIsBookmark(!isBookmark)
-        //     });
-
+        bookmark == null ? await dispatch(callPostBookmarkAPI({form: form}))
+                .then(() => {
+                    // approvalList[index].bookmark = "1";
+                    dispatch({type : RE_WRITE_PAGE, payload : {index}});
+                    //{index}를 보내면, index라는 객체에 index값을 담아서 넘겨주는 것이고, index만 넘겨주면 숫자만 넘어감
+                })
+            : await dispatch(callDeleteBookmarkAPI({form: form}))
+                .then(() => {
+                    // approvalList[index].bookmark = null;
+                    dispatch({type : RE_WRITE_PAGE, payload : {index}});
+                });
         // setTimeout(() => {
         //     setIsBookmark(!isBookmark);
         // }, 50); //화면을 다시 그려주기 위한 state값 변경..
@@ -100,7 +109,7 @@ function ApprovalSubmit() {
                 }));
             }
         }
-        , [isBookmark, currentPage]
+        , [currentPage, isBookmark]
     );
 
     return (
@@ -205,7 +214,7 @@ function ApprovalSubmit() {
                                             </thead>
                                             <tbody>
                                             {
-                                                Array.isArray(approvalList) && approvalList.map((a) => (
+                                                Array.isArray(approvalList) && approvalList.map((a, index) => (
                                                     <tr key={a.docCode}>
                                                         <td>
                                                             <input className={`${["form-check-input"]}`}
@@ -216,7 +225,7 @@ function ApprovalSubmit() {
                                                         </td>
                                                         <td>
                                                             <button
-                                                                onClick={() => onClickBookmarkHandler(a.docCode, a.bookmark)}>{(a.bookmark == null ?
+                                                                onClick={() => onClickBookmarkHandler(a.docCode, a.bookmark, index)}>{(a.bookmark == null ?
                                                                 <PlainStar/> : <BlueStar/>)}</button>
                                                         </td>
                                                         <td>{a.docType}</td>
