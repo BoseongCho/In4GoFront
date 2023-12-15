@@ -15,7 +15,7 @@ import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
 import {RE_WRITE_PAGE} from "../../../modules/ApprovalModule";
 
-function ApprovalSubmit() {
+function ApprovalBookmark() {
 
     const [form, setForm] = useState({
         startDate: '',
@@ -26,7 +26,7 @@ function ApprovalSubmit() {
     // Ref를 사용하지않고 state의 startDate, endDate를 비교하게 되면, 조건문에서 새로 선택한 날짜가 적용되지 않고,
     // 캘린더 자체 선택값을 value로 주게되면 state값은 변하지 않지만, value값이 바뀌는 것을 막을 수 없다.
     // 또한 value는 state로 줘야 값이 변경되었을 때 re-rendering이 일어나기 때문에 ref를 사용해야함.
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = decodeJwt(window.localStorage.getItem("accessToken"));
     const auth = token.auth;
@@ -93,14 +93,11 @@ function ApprovalSubmit() {
 
     useEffect(
         () => {
-            console.log('token', token.sub);
-            console.log('auth', auth);
-            console.log();
             if (token !== null) {
                 dispatch(callGetApprovalAPI({
                     memCode: token.sub,
                     currentPage: currentPage,
-                    pageType : "submit"
+                    pageType : 'bookmark'
                 }));
             }
         }
@@ -127,38 +124,10 @@ function ApprovalSubmit() {
                                     <div className={`${NavCSS["d-flex-space"]} ${NavCSS["bread-title"]}`}>
                                         <div className={`${NavCSS["title"]}`}>
                                             <span className={`${NavCSS["breadcrumb"]}`}>결재 /</span>
-                                            <h2 className={`${NavCSS["h3"]}`}>내가 올린 결재</h2>
+                                            <h2 className={`${NavCSS["h3"]}`}>북마크함</h2>
                                         </div>
                                     </div>
                                     <div></div>
-                                    <div className={`${NavCSS["commute-manage"]}`}>
-                                        <div className={`${NavCSS["sc-djTcra"]} ${NavCSS["laubHy"]}`}>
-                                            <div className={`${NavCSS["form-group"]}`}>
-                                                <span className={`${NavCSS["control-label"]}`}>시작일</span>
-                                                <div className={`${NavCSS["position-relative"]}`}>
-                                                    <input value={form.startDate} ref={startDate} type="date"
-                                                           name="startDate"
-                                                           className={`${NavCSS["sc-fWHiwC"]} ${NavCSS["jtuvXR"]} ${NavCSS["form-control"]} ${NavCSS["input-datepicker"]}`}
-                                                           placeholder="시작일"
-                                                           onChange={onChangeCalendarHandler}/>
-                                                </div>
-                                            </div>
-                                            <h1>-</h1>
-                                            <div className={`${NavCSS["form-group"]}`}>
-                                                <span className={`${NavCSS["control-label"]}`}>종료일</span>
-                                                <div className={`${NavCSS["position-relative"]}`}>
-                                                    <input value={form.endDate} ref={endDate} type="date"
-                                                           name="endDate"
-                                                           className={`${NavCSS["sc-fWHiwC"]} ${NavCSS["jtuvXR"]} ${NavCSS["form-control"]} ${NavCSS["input-datepicker"]}`}
-                                                           placeholder="시작일"
-                                                           onChange={onChangeCalendarHandler}/>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-primary mt-3"
-                                                    onClick={onClickSearchHandler}>조회
-                                            </button>
-                                        </div>
-                                    </div>
                                     <div className={`${NavCSS["d-flex-space"]}`}>
                                         {/* <div className={`${NavCSS["d-flex-space"]}`}>
                                             <select className={`${["form-select"]} ${["form-select-sm"]}`} aria-label=".form-select-sm example">
@@ -169,16 +138,6 @@ function ApprovalSubmit() {
                                             </select>
                                         </div> */}
                                         <div></div>
-                                        <div className={`${NavCSS["d-flex-space"]}`}>
-                                            <div className={`${["display-flex"]}`}>
-                                                <button className={`${["btn"]} ${["btn-primary"]}`}
-                                                        style={{alignSelf: "self-start"}} data-bs-toggle="modal"
-                                                        data-bs-target="#staticBackdrop">
-                                                    결재 작성하기
-                                                </button>
-                                                <ApprovalModal/>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div className={`${NavCSS.iLLwYh}`}>
                                         <table
@@ -196,7 +155,6 @@ function ApprovalSubmit() {
                                                         </label>
                                                     </div>
                                                 </th>
-
                                                 <th className={`${NavCSS["bGDZWl"]}`}>북마크</th>
                                                 <th className={`${NavCSS["bGDZRZ"]}`}>종류</th>
                                                 <th className={`${NavCSS["iztiXy"]}`}>문서번호</th>
@@ -212,11 +170,12 @@ function ApprovalSubmit() {
                                                 Array.isArray(approvalList) && approvalList.map((a, index) => (
                                                     <tr key={a.docCode}>
                                                         <td>
-                                                            <input className={`${["form-check-input"]}`}
-                                                                   type="checkbox" value=""
-                                                                   id="flexCheckDefault"/>
-                                                            <label className={`${["form-check-label"]}`}
-                                                                   htmlFor="flexCheckDefault"></label>
+                                                            {a.typeToMe}
+                                                            {/*<input className={`${["form-check-input"]}`}*/}
+                                                            {/*       type=" checkbox" value=""*/}
+                                                            {/*       id="flexCheckDefault"/>*/}
+                                                            {/*<label className={`${["form-check-label"]}`}*/}
+                                                            {/*       htmlFor="flexCheckDefault"></label>*/}
                                                         </td>
                                                         <td>
                                                             <button
@@ -254,4 +213,4 @@ function ApprovalSubmit() {
     )
 }
 
-export default ApprovalSubmit;
+export default ApprovalBookmark;
