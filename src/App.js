@@ -13,6 +13,9 @@ import DutyManage from "./pages/duty/DutyManage";
 import SpecialDutyApply from "./pages/duty/SpecialDutyApply";
 import VacationApply from "./pages/duty/VacationApply";
 import ScheduleManage from "./pages/duty/components/ScheduleManage";
+import ApprovalApprover from "./pages/task/taskApproval/ApprovalApprover";
+import ApprovalBookmark from "./pages/task/taskApproval/ApprovalBookmark";
+import ApprovalReferred from "./pages/task/taskApproval/ApprovalReferred";
 
 function App() {
 
@@ -25,6 +28,9 @@ function App() {
           <Route path="task" element={<TaskSidebar />}>
             <Route index element={<ApprovalSubmit />} />
             <Route index path="submit" element={<ApprovalSubmit />} />
+            <Route path="approver" element={<ApprovalApprover />} />
+            <Route path="bookMark" element={<ApprovalBookmark />} />
+            <Route path="referred" element={<ApprovalReferred />} />
           </Route>
 
           <Route path="duty" element={<DutyMain />}>

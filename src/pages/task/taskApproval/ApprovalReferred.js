@@ -15,7 +15,7 @@ import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
 import {RE_WRITE_PAGE} from "../../../modules/ApprovalModule";
 
-function ApprovalSubmit() {
+function ApprovalReferred() {
 
     const [form, setForm] = useState({
         startDate: '',
@@ -26,7 +26,7 @@ function ApprovalSubmit() {
     // Ref를 사용하지않고 state의 startDate, endDate를 비교하게 되면, 조건문에서 새로 선택한 날짜가 적용되지 않고,
     // 캘린더 자체 선택값을 value로 주게되면 state값은 변하지 않지만, value값이 바뀌는 것을 막을 수 없다.
     // 또한 value는 state로 줘야 값이 변경되었을 때 re-rendering이 일어나기 때문에 ref를 사용해야함.
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = decodeJwt(window.localStorage.getItem("accessToken"));
     const auth = token.auth;
@@ -100,7 +100,7 @@ function ApprovalSubmit() {
                 dispatch(callGetApprovalAPI({
                     memCode: token.sub,
                     currentPage: currentPage,
-                    pageType : "submit"
+                    pageType : "referred"
                 }));
             }
         }
@@ -127,7 +127,7 @@ function ApprovalSubmit() {
                                     <div className={`${NavCSS["d-flex-space"]} ${NavCSS["bread-title"]}`}>
                                         <div className={`${NavCSS["title"]}`}>
                                             <span className={`${NavCSS["breadcrumb"]}`}>결재 /</span>
-                                            <h2 className={`${NavCSS["h3"]}`}>내가 올린 결재</h2>
+                                            <h2 className={`${NavCSS["h3"]}`}>참조된 문서</h2>
                                         </div>
                                     </div>
                                     <div></div>
@@ -254,4 +254,4 @@ function ApprovalSubmit() {
     )
 }
 
-export default ApprovalSubmit;
+export default ApprovalReferred;

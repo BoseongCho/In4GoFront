@@ -2,11 +2,11 @@ import {DELETE_APPROVAL_BOOKMARK, GET_APPROVAL, POST_APPROVAL_BOOKMARK} from "..
 import {GET_APPROVAL_SEARCHINFO, POST_APPROVAL_INSERT} from "../modules/ModalModule";
 
 
-export const callGetApprovalAPI = ({memCode, currentPage}) => {
+export const callGetApprovalAPI = ({memCode, currentPage, pageType}) => {
     let requestURL;
 
     // if (currentPage !== undefined || currentPage !== null) {
-    requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval?memCode=${memCode}&offset=${currentPage}`;
+    requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval?memCode=${memCode}&offset=${currentPage}&pageType=${pageType}`;
     // } else {
     //     requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval/?memCode=${memCode}`;
     // } 초기 페이징 처리 이전에 사용됨

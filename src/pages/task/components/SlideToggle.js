@@ -22,9 +22,8 @@ function SlideToggle(){
                 {hover && (
                     <CSSTransition classNames="slide" timeout={200}>
                         <div>
-                            <div className='mt-2' ><NavLink to="needed">- 결재 할 것</NavLink></div>
-                            <div className='mt-2' ><NavLink to="completed">- 결재 완료</NavLink></div>
-                            <div className='mt-2' ><NavLink to="refered">- 결재 참조</NavLink></div>
+                            <div className='mt-2' ><NavLink to="approver">- 결재함</NavLink></div>
+                            <div className='mt-2' ><NavLink to="referred">- 결재 참조</NavLink></div>
                         </div>
                     </CSSTransition>
                 )}
