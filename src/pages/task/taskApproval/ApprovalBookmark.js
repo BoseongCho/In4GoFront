@@ -57,7 +57,8 @@ function ApprovalBookmark() {
                 dispatch(callGetApprovalAPI({
                     memCode: token.sub,
                     currentPage: currentPage,
-                    pageType: 'bookmark'
+                    pageType: 'bookmark',
+                    docType : "종류"
                 }));
             }
         }
