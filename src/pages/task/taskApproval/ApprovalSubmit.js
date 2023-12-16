@@ -26,7 +26,6 @@ function ApprovalSubmit() {
     // Ref를 사용하지않고 state의 startDate, endDate를 비교하게 되면, 조건문에서 새로 선택한 날짜가 적용되지 않고,
     // 캘린더 자체 선택값을 value로 주게되면 state값은 변하지 않지만, value값이 바뀌는 것을 막을 수 없다.
     // 또한 value는 state로 줘야 값이 변경되었을 때 re-rendering이 일어나기 때문에 ref를 사용해야함.
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = decodeJwt(window.localStorage.getItem("accessToken"));
     const auth = token.auth;
@@ -36,6 +35,7 @@ function ApprovalSubmit() {
     const pageInfo = approvals.pageInfo;
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchDocType, setSearchDocType] = useState("종류");
 
     const onChangeCalendarHandler = (e) => {
         // 클릭하는 순간 ref의 값은 변경되어 조건문에 들어가지만,
@@ -90,21 +90,21 @@ function ApprovalSubmit() {
             return `${NavCSS["badge"]} ${NavCSS["badge-red"]}`;
         }
     }
+    const onChangeDocType = (e) => {setSearchDocType(e.target.value);}
+
 
     useEffect(
         () => {
-            console.log('token', token.sub);
-            console.log('auth', auth);
-            console.log();
             if (token !== null) {
                 dispatch(callGetApprovalAPI({
                     memCode: token.sub,
                     currentPage: currentPage,
-                    pageType : "submit"
+                    pageType : "submit",
+                    docType : searchDocType
                 }));
             }
         }
-        , [currentPage]
+        , [currentPage, searchDocType]
     );
 
     return (
@@ -160,14 +160,15 @@ function ApprovalSubmit() {
                                         </div>
                                     </div>
                                     <div className={`${NavCSS["d-flex-space"]}`}>
-                                        {/* <div className={`${NavCSS["d-flex-space"]}`}>
-                                            <select className={`${["form-select"]} ${["form-select-sm"]}`} aria-label=".form-select-sm example">
-                                                <option defaultValue>전체</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                        <div className={`${NavCSS["d-flex-space"]}`}>
+                                            <select className="form-select-sm text-bg-light bdcolor"
+                                                    onChange={onChangeDocType} name="docType">
+                                                <option>종류</option>
+                                                <option>프로그램</option>
+                                                <option>경영지원</option>
+                                                <option>사업</option>
                                             </select>
-                                        </div> */}
+                                        </div>
                                         <div></div>
                                         <div className={`${NavCSS["d-flex-space"]}`}>
                                             <div className={`${["display-flex"]}`}>

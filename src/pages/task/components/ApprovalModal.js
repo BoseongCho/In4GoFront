@@ -19,7 +19,8 @@ function ApprovalModal() {
         title: '',
         content: '',
         approverList: [],
-        refereeList: []
+        refereeList: [],
+        docType: ''
     })
 
     const [mouseOverIndex, setMouseOverIndex] = useState();
@@ -160,19 +161,17 @@ function ApprovalModal() {
                                                 <div style={{ marginRight: '20px' }}>
                                                     <p className="micro">문서타입</p>
                                                     <select className="form-select-sm text-bg-light bdcolor"
-                                                            onChange={onChangeHanlder} name="docType"
-                                                    >
-                                                        <option selected>프로그램</option>
-                                                        <option value="1">경영지원</option>
-                                                        <option value="2">사업</option>
+                                                            onChange={onChangeHanlder} name="docType">
+                                                        <option defaultValue="프로그램">프로그램</option>
+                                                        <option value="경영지원">경영지원</option>
+                                                        <option value="사업">사업</option>
                                                     </select>
                                                 </div>
                                                 <div>
                                                     <p className="micro">문서보존기간</p>
                                                     <select className="form-select-sm text-bg-light bdcolor"
-                                                            onChange={onChangeHanlder} name=""
-                                                    >
-                                                        <option value="0"selected>영구</option>
+                                                            onChange={onChangeHanlder} name="">
+                                                        <option defaultValue="0">영구</option>
                                                         <option value="1">1년</option>
                                                         <option value="3">3년</option>
                                                         <option value="5">5년</option>

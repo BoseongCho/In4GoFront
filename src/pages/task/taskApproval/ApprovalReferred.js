@@ -15,6 +15,7 @@ import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
 import {RE_WRITE_PAGE} from "../../../modules/ApprovalModule";
 
+
 function ApprovalReferred() {
 
     const [form, setForm] = useState({
@@ -36,6 +37,7 @@ function ApprovalReferred() {
     const pageInfo = approvals.pageInfo;
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchDocType, setSearchDocType] = useState("종류");
 
     const onChangeCalendarHandler = (e) => {
         // 클릭하는 순간 ref의 값은 변경되어 조건문에 들어가지만,
@@ -93,19 +95,21 @@ function ApprovalReferred() {
 
     useEffect(
         () => {
-            console.log('token', token.sub);
-            console.log('auth', auth);
-            console.log();
             if (token !== null) {
                 dispatch(callGetApprovalAPI({
                     memCode: token.sub,
                     currentPage: currentPage,
-                    pageType : "referred"
+                    pageType : "referred",
+                    docType : searchDocType
                 }));
             }
         }
-        , [currentPage]
+        , [currentPage, searchDocType]
     );
+
+    const onChangeDocType = (e) => {setSearchDocType(e.target.value);}
+
+
 
     return (
         // <>
@@ -160,14 +164,13 @@ function ApprovalReferred() {
                                         </div>
                                     </div>
                                     <div className={`${NavCSS["d-flex-space"]}`}>
-                                        {/* <div className={`${NavCSS["d-flex-space"]}`}>
-                                            <select className={`${["form-select"]} ${["form-select-sm"]}`} aria-label=".form-select-sm example">
-                                                <option defaultValue>전체</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div> */}
+                                        <select className="form-select-sm text-bg-light bdcolor"
+                                                onChange={onChangeDocType} name="docType">
+                                            <option>종류</option>
+                                            <option>프로그램</option>
+                                            <option>경영지원</option>
+                                            <option>사업</option>
+                                        </select>
                                         <div></div>
                                         <div className={`${NavCSS["d-flex-space"]}`}>
                                             <div className={`${["display-flex"]}`}>
