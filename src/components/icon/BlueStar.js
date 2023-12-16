@@ -5,7 +5,7 @@ function BlueStar() {
 
     return ( 
         <>
-            <FontAwesomeIcon icon={faStar} color="blue"/>
+            <FontAwesomeIcon icon={faStar} color="rgb(8, 107, 222)"/>
         </>
     )
 }

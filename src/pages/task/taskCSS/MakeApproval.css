@@ -196,10 +196,19 @@ tr {
     padding: 5px;
     margin: 10px 0px;
 }
-
+.position-style{
+    font-size: 13px;
+    font-family: 휴먼모음T;
+}
 .cMW {
     padding: 5px;
     margin: 10px 0px;
+}
+.bdcolor{
+    border-color : #fafafa !important;
+}
+.flex-box{
+    display: flex;
 }
 
 .mr-3 {

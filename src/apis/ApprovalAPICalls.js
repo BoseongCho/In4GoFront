@@ -28,8 +28,8 @@ export const callGetApprovalAPI = ({memCode, currentPage, pageType}) => {
     }
 }
 
-export const callGetSearchInfoAPI = ({nameOrPosition, inputValue}) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval/searchInfo?nameOrPosition=${nameOrPosition}&inputValue=${inputValue}`;
+export const callGetSearchInfoAPI = ({nameOrPosition, inputValue, memCode}) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/approval/searchInfo?nameOrPosition=${nameOrPosition}&inputValue=${inputValue}&memCode=${memCode}`;
     //requestURl길다고 밑으로 내리면 글자 못 읽어옴.
     return async (dispatch, getState) => {
 
