@@ -196,7 +196,7 @@ function ApprovalApprover() {
 
                                                 <th className={`${NavCSS["bGDZWl"]}`}>북마크</th>
                                                 <th className={`${NavCSS["bGDZRZ"]}`}>종류</th>
-                                                <th className={`${NavCSS["iztiXy"]}`}>문서번호</th>
+                                                <th className={`${NavCSS["iztiXy"]}`}>상신인</th>
                                                 <th className={`${NavCSS["iztiWO"]}`}>제목</th>
                                                 <th className={`${NavCSS["bGDZRX"]}`}>상태</th>
                                                 <th className={`${NavCSS["bGDZRW"]}`}>첨부파일</th>
@@ -221,7 +221,7 @@ function ApprovalApprover() {
                                                                 <PlainStar/> : <BlueStar/>)}</button>
                                                         </td>
                                                         <td>{a.docType}</td>
-                                                        <td>{a.docCode}</td>
+                                                        <td><span className={`${["position-style"]}`}>{a.approvalMem.positionCode.positionName} </span>{a.approvalMem.memName} </td>
                                                         <td>{a.title}</td>
                                                         <td><span
                                                             className={getApprovalStatusClassName(a.isApproved)}>{a.isApproved == 'W' ? '진행' : a.isApproved == 'Y' ? '승인' : '반려'}</span>
