@@ -1,0 +1,449 @@
+.bZDmKl {
+    padding: 20px 40px;
+    background-color: rgb(244, 245, 246);
+    color: rgb(17, 17, 17);
+}
+
+.kqswmx #apvModal .modal-body-header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+}
+
+.ggMbCF .modal-body-header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
+}
+
+.kqswmx #apvModal .modal-content {
+    max-height: 100%;
+    border-radius: 0px;
+}
+
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+    overflow: auto;
+}
+
+.ggMbCF .modal-content {
+    min-width: 570px;
+}
+
+.modal-content {
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 8px 16px -4px rgba(72, 72, 72, 0.25), 0 0 1px 0 rgba(72, 72, 72, 0.31);
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.ggMbCF .modal-body-header .close {
+    position: static;
+    color: rgb(0, 0, 0);
+}
+.modal .close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 5;
+    line-height: 0;
+    outline: 0;
+    opacity: 1;
+    color: #bdbdbd;
+}
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+}
+
+.kqswmx #apvModal .modal-body {
+    padding: 0px;
+}
+.modal-dialog-scrollable .modal-body {
+    overflow: initial;
+    overflow-x: initial;
+}
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+
+}
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+.bZDmKl {
+    padding: 20px 40px;
+    background-color: rgb(244, 245, 246);
+    color: rgb(17, 17, 17);
+}
+.bZDmKl .ApvHeader-title {
+    font-size: 32px;
+    font-weight: 600;
+}
+.bZDmKl .StyledApvDl {
+    margin-top: 29px;
+}
+.iZoAAQ {
+    font-size: 16px;
+}
+.iZoAAQ .ApvDl-item {
+    display: flex;
+    padding: 3px 0px;
+}
+.iZoAAQ .ApvDl-dt {
+    display: inline-block;
+    min-width: calc(var(--max-length-title) * 1em);
+    padding-right: 10px;
+}
+.iZoAAQ .ApvDl-dd {
+    max-width: calc((100 - var(--max-length-title)) * 1%);
+    white-space: pre-line;
+}
+.ieDqXT {
+    padding: 20px 40px;
+    background-color: rgb(244, 245, 246);
+    color: rgb(17, 17, 17);
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+.ieDqXT .ApvHeader-footer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.kqswmx .Apv-button.is-neutral {
+    border-color: rgb(153, 153, 153);
+}
+.kqswmx .Apv-button {
+    color: inherit;
+    background: none;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 36px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid;
+    font-size: 15px;
+    cursor: pointer;
+}
+.ieDqXT .ApvHeader-footer_column .Apv-button .material-icons {
+    margin-right: 8px;
+    font-size: 17px;
+}
+.ieDqXT .ApvHeader-footer_column .Apv-button + .Apv-button {
+    margin-left: 8px;
+}
+.kqswmx .Apv-button.is-neutral {
+    border-color: rgb(153, 153, 153);
+}
+.kqswmx {
+    word-break: keep-all;
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-x: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+.fade {
+    transition: opacity 0.15s linear;
+}
+.kqswmx #apvModal .modal-dialog {
+    max-width: 90%;
+    min-height: 90%;
+    max-height: 90%;
+}
+.modal.fade .modal-dialog {
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transform: translate(0, -50px);
+    transform: translate(0, -50px);
+}
+
+.modal.show .modal-dialog {
+    -webkit-transform: none;
+    transform: none;
+}
+.ggMbCF .modal-dialog {
+    min-width: 570px;
+}
+.modal-dialog-centered.modal-dialog-scrollable {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+}
+.modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+    pointer-events: none;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.kqswmx .Apv-button.is-danger {
+    color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+}
+[type='button'], [type='reset'], [type='submit'], button {
+    -webkit-appearance: button;
+}
+.kqswmx .Apv-button.is-ghost {
+    background-color: transparent;
+    color: rgb(0, 60, 255);
+}
+.kqswmx .Apv-button.is-primary {
+    background-color: rgb(0, 60, 255);
+    border-color: rgb(0, 60, 255);
+    color: rgb(255, 255, 255);
+}
+.kqswmx .Apv-button.is-ghost {
+    background-color: transparent;
+    color: rgb(0, 60, 255);
+}
+.dKqAkS {
+    padding: 40px;
+    color: rgb(17, 17, 17);
+}
+
+.dKqAkS .ApvSection-header {
+    position: sticky;
+    top: 76px;
+    z-index: 1;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.dKqAkS .ApvSection-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.kqswmx .Apv-button.is-text.is-primary {
+    color: rgb(0, 60, 255);
+}
+.dKqAkS .ApvSection-header .Apv-button {
+    font-weight: 600;
+}
+.kqswmx .Apv-button.is-text {
+    border: 0px;
+    background: transparent;
+}
+.dKqAkS .ApvSection-body {
+    margin-top: 14px;
+}
+
+
+.dSYOmc .thead {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(225, 226, 227);
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+}
+.dSYOmc .tr {
+    display: grid;
+    grid-template-columns: 128px 1fr 1fr 1fr;
+    position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.dSYOmc .cell {
+    padding-right: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dSYOmc .tbody {
+    margin-top: 16px;
+    font-size: 16px;
+}
+.dSYOmc .tr-group.is-active.has-border {
+    border: 1px solid rgb(155, 205, 255);
+}
+.dSYOmc .tr-group.is-active {
+    background-color: rgb(221, 244, 255);
+    color: rgb(17, 17, 17);
+}
+.dSYOmc .tr-group {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 4px;
+    background-color: rgb(246, 246, 246);
+    margin-bottom: 16px;
+    color: rgb(153, 153, 153);
+}
+.dSYOmc .tbody .cell:nth-child(1) {
+    padding-left: 16px;
+}
+.fEuiZV {
+    margin-right: 5px;
+    color: inherit;
+}
+
+.gudzTW {
+    color: rgb(17, 17, 17);
+    font-size: 16px;
+    line-height: 1.63;
+}
+.gMsGbp .fr-view {
+    padding: 20px 0px;
+    white-space: pre-line;
+}
+.fr-view {
+    word-wrap: break-word;
+}
+.dKqAkS {
+    padding: 40px;
+    color: rgb(17, 17, 17);
+}
+.Umavi {
+    padding: 16px;
+    border-radius: 4px;
+    background-color: rgb(246, 246, 246);
+    text-align: center;
+    color: rgb(153, 153, 153);
+}
+.gtBzxE {
+    margin-top: 16px;
+}
+.gtBzxE .ApvCommentForm-input {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(195, 195, 195);
+    font-size: 14px;
+    vertical-align: top;
+}
+textarea {
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    font-size: 1.1rem;
+}
+
+textarea {
+    transition: border-color 0.15s ease-in-out, background 0.15s ease-in-out, color 0.15s ease-in-out, opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+.gtBzxE .ApvCommentForm-footer {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.gtBzxE .ApvCommentForm-footer .Apv-button[disabled] {
+    opacity: 0.5;
+}
+
+
+.gtBzxE .ApvCommentForm-footer .Apv-button {
+    height: 32px;
+    padding: 8px;
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.ggMbCF .modal-footer {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    gap: 10px;
+    position: sticky;
+    z-index: 1;
+    padding: 16px 24px;
+    bottom: 0px;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+}
+.modal-dialog-scrollable .modal-footer {
+    flex-grow: 0;
+}
+.modal-dialog-scrollable .modal-footer, .modal-dialog-scrollable .modal-header {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}

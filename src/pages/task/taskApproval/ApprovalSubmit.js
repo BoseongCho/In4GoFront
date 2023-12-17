@@ -14,6 +14,8 @@ import {
 import Pagination from "../components/Pagination";
 import ApprovalModal from "../components/ApprovalModal";
 import {RE_WRITE_PAGE} from "../../../modules/ApprovalModule";
+import ApprovalDetailModal from "../components/ApprovalDetailModal";
+import Test2 from "../components/Test2";
 
 function ApprovalSubmit() {
 
@@ -168,13 +170,25 @@ function ApprovalSubmit() {
                                                 <option>경영지원</option>
                                                 <option>사업</option>
                                             </select>
+                                            <button className={`${["btn"]} ${["btn-primary"]}`}
+                                                    style={{alignSelf: "self-start"}} data-bs-toggle="modal"
+                                                    data-bs-target="#apvModal">
+                                                TEST
+                                            </button>
+                                            <ApprovalDetailModal/>
+                                            <button className={`${["btn"]} ${["btn-primary"]}`}
+                                                    style={{alignSelf: "self-start"}} data-bs-toggle="modal"
+                                                    data-bs-target="#apvModal">
+                                                TEST2
+                                            </button>
+                                            <Test2/>
                                         </div>
                                         <div></div>
                                         <div className={`${NavCSS["d-flex-space"]}`}>
                                             <div className={`${["display-flex"]}`}>
                                                 <button className={`${["btn"]} ${["btn-primary"]}`}
                                                         style={{alignSelf: "self-start"}} data-bs-toggle="modal"
-                                                        data-bs-target="#staticBackdrop">
+                                                        data-bs-target="#apvMake">
                                                     결재 작성하기
                                                 </button>
                                                 <ApprovalModal/>
