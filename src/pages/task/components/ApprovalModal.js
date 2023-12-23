@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {decodeJwt} from "../../../utils/tokenUtils";
 import {useState} from "react";
 import Xmark from "../../../components/icon/Xmark";
-import Ek from "../taskApproval/Ek";
+import Ek from "../../../components/common/Ek";
 import {CLEAR_INFO} from "../../../modules/ModalModule";
 import '../taskCSS/MakeApproval.css';
 import {callGetSearchInfoAPI, callPostApprovalAPI} from "../../../apis/ApprovalAPICalls";

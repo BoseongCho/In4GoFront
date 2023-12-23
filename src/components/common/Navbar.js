@@ -105,16 +105,11 @@ function Navbar() {
               </span>
 
               <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>
-              <NavLink to="/salary/salinfo">급여</NavLink>
-                </span>
-
-              <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>
-                 <NavLink to="/dailyWorker">일용직</NavLink>
-              </span>
-              <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>
                 <NavLink to="/task">업무</NavLink>
               </span>
-              <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>게시판</span>
+              <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>
+                <NavLink to="/board">게시판</NavLink>
+              </span>
             </div>
           </div>
           {isLogin == null || isLogin === undefined ? (

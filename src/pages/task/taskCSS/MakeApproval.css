@@ -18,6 +18,10 @@
     margin: 24px 0;
 }
 
+.form-control::placeholder {
+    color: #999; /* 변경하려는 색상으로 대체하세요 */
+}
+
 .modal-body-content {
     color: #767676;
 }

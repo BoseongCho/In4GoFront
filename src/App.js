@@ -16,6 +16,9 @@ import ScheduleManage from "./pages/duty/components/ScheduleManage";
 import ApprovalApprover from "./pages/task/taskApproval/ApprovalApprover";
 import ApprovalBookmark from "./pages/task/taskApproval/ApprovalBookmark";
 import ApprovalReferred from "./pages/task/taskApproval/ApprovalReferred";
+import NoticeMain from "./pages/notice/NoticeMain";
+import NoticeSidebar from "./pages/notice/NoticeSidebar";
+import NoticeDetail from "./pages/notice/NoticeDetail";
 
 function App() {
 
@@ -31,6 +34,11 @@ function App() {
             <Route path="approver" element={<ApprovalApprover />} />
             <Route path="bookMark" element={<ApprovalBookmark />} />
             <Route path="referred" element={<ApprovalReferred />} />
+          </Route>
+          <Route path="board" element={<NoticeSidebar/>}>
+            <Route index element={<NoticeMain />} />
+            <Route index path="notice" element={<NoticeMain />} />
+            <Route path="detail" element={<NoticeDetail />} />
           </Route>
 
           <Route path="duty" element={<DutyMain />}>

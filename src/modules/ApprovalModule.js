@@ -31,14 +31,6 @@ const approvalReducer = handleActions(
                 ...state,
             };
         }
-        // [CHANGE_BOOKMARK_VALUE] : (state, payload) => {
-        //
-        //     return {
-        //         ...state,
-        //         ...payload,
-        //         approvalList[index].bookmark : null;
-        //     }
-        // }
     },
     initialState
 )

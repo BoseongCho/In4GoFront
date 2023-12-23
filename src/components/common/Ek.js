@@ -1,6 +1,6 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import '../taskCSS/Ek.css'
+import '../../pages/task/taskCSS/Ek.css'
 
 function Ek ( {form,setForm, setNoteEditor} ){
 
