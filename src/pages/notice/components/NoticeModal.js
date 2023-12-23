@@ -14,20 +14,26 @@ function NoticeModal() {
         memCode: token.sub,
         title: '',
         content: '',
-        docType: ''
+        isPinned : 0
     })
 
     const [noteEditor, setNoteEditor] = useState('');
     const [docAttachments, setDocAttachments] = useState('');
 
     const onChangeHanlder = (e) => {
+
         setForm({
             ...form,
             [e.target.name]: e.target.value
         })
-
     }
+    const handlePinnedChange = (e) => {
 
+            setForm({
+                ...form,
+                isPinned: e.target.checked
+            })
+    }
     const clearFilesHandler = () => {
 
         document.querySelector('input[type=file]').value = null;
@@ -44,7 +50,8 @@ function NoticeModal() {
         setForm({
             memCode: token.sub,
             title: '',
-            content: ''
+            content: '',
+            isPinned: 0
         })
         setDocAttachments([]);
     }
@@ -100,9 +107,9 @@ function NoticeModal() {
                                                         <div className="custom-control custom-checkbox"
                                                              style={{minHeight: 'auto', paddingBottom: '5px'}}>
                                                             <input type="checkbox" className="checkbox-disable custom-control-input"
-                                                            id="ntPriority" name="ntPriority"/>
+                                                            id="pin" name="pin" onChange={handlePinnedChange} checked={form.isPinned}/>
                                                             <label className="custom-control-label"
-                                                                   htmlFor="ntPriority">
+                                                                   htmlFor="pin">
                                                                 이 글을 상단에 고정합니다
                                                             </label>
                                                         </div>

@@ -33,7 +33,6 @@ function ApprovalModal() {
             ...form,
             [e.target.name]: e.target.value
         })
-
     }
 
     const clearFilesHandler = () => {
