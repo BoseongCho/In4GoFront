@@ -2,19 +2,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {decodeJwt} from "../../../utils/tokenUtils";
 import {useState} from "react";
 import Ek from "../../../components/common/Ek";
-import {callPostApprovalAPI} from "../../../apis/ApprovalAPICalls";
+import {callPostNoticeAPI} from "../../../apis/NoticeAPICalls";
 
 function NoticeModal() {
 
     const dispatch = useDispatch();
     const token = decodeJwt(window.localStorage.getItem("accessToken"));
 
-
     const [form, setForm] = useState({
         memCode: token.sub,
         title: '',
         content: '',
-        docType: ''
+        docType: '',
+        isPinned : 0
     })
 
     const [noteEditor, setNoteEditor] = useState('');
@@ -25,7 +25,20 @@ function NoticeModal() {
             ...form,
             [e.target.name]: e.target.value
         })
-
+        console.log(form);
+    }
+    const pinChangeHandler = (e) => {
+        if(e.target.checked == true){
+            setForm({
+                ...form,
+                [e.target.name]: 1
+            })
+        } else{
+            setForm({
+                ...form,
+                [e.target.name]: 0
+            })
+        }
     }
 
     const clearFilesHandler = () => {
@@ -44,8 +57,10 @@ function NoticeModal() {
         setForm({
             memCode: token.sub,
             title: '',
-            content: ''
+            content: '',
+            isPinned: 0
         })
+        document.querySelector('#isPinned').checked = false;
         setDocAttachments([]);
     }
 
@@ -73,7 +88,9 @@ function NoticeModal() {
             }
         }
 
-        dispatch(callPostApprovalAPI(form, formData));
+        // document.querySelector('input[type=file]').value = null;
+
+        dispatch(callPostNoticeAPI(form, formData));
         // .then(() => {document.querySelector('#closeModal').click()});
         // window.alert('등록 성공');
     }
@@ -100,9 +117,9 @@ function NoticeModal() {
                                                         <div className="custom-control custom-checkbox"
                                                              style={{minHeight: 'auto', paddingBottom: '5px'}}>
                                                             <input type="checkbox" className="checkbox-disable custom-control-input"
-                                                            id="ntPriority" name="ntPriority"/>
+                                                            id="isPinned" name="isPinned" onChange={pinChangeHandler}/>
                                                             <label className="custom-control-label"
-                                                                   htmlFor="ntPriority">
+                                                                   htmlFor="isPinned">
                                                                 이 글을 상단에 고정합니다
                                                             </label>
                                                         </div>
