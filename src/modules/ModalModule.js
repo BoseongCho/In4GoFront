@@ -1,10 +1,12 @@
 import {createActions, handleActions} from "redux-actions";
+import {RE_WRITE_PAGE} from "./ApprovalModule";
 
 const initialState = [];
 
 export const CLEAR_INFO = 'modal/CLEAR_INFO';
 export const GET_APPROVAL_SEARCHINFO = 'modal/GET_APPROVAL_SEARCHINFO';
 export const POST_APPROVAL_INSERT = 'modal/POST_APPROVAL_INSERT';
+export const RE_WRITE_MODAL = 'modal/RE_WRITE';
 
 const modalReducer = handleActions(
     {
@@ -19,6 +21,9 @@ const modalReducer = handleActions(
         },
         [POST_APPROVAL_INSERT] : (state, { payload }) => {
             return payload;
+        },
+        [RE_WRITE_MODAL] : (state, payload) =>{
+            return payload
         }
     },
     initialState
