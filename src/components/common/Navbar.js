@@ -108,7 +108,7 @@ function Navbar() {
                 <NavLink to="/task">업무</NavLink>
               </span>
               <span className={`${NavCSS.fEXmlR} ${NavCSS.kOVHNW} ${NavCSS.nav}`}>
-                <NavLink to="/board">게시판</NavLink>
+                <NavLink to="/notice">게시판</NavLink>
               </span>
             </div>
           </div>

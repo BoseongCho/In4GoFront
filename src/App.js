@@ -35,10 +35,10 @@ function App() {
             <Route path="bookMark" element={<ApprovalBookmark />} />
             <Route path="referred" element={<ApprovalReferred />} />
           </Route>
-          <Route path="board" element={<NoticeSidebar/>}>
+          <Route path="notice" element={<NoticeSidebar/>}>
             <Route index element={<NoticeMain />} />
             <Route index path="notice" element={<NoticeMain />} />
-            <Route path="detail" element={<NoticeDetail />} />
+            <Route path="detail/:no" element={<NoticeDetail />} />
           </Route>
 
           <Route path="duty" element={<DutyMain />}>

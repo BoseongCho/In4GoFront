@@ -1,4 +1,4 @@
-import {POST_APPROVAL_INSERT} from "../modules/ModalModule";
+import {GET_NOTICE, POST_NOTICE_INSERT} from "../modules/NoticeModule";
 
 export const callPostNoticeAPI = (form, formData) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/insert`;
@@ -28,6 +28,50 @@ export const callPostNoticeAPI = (form, formData) => {
                 }
             })
         console.log('insert 성공...');
-        dispatch({type: POST_APPROVAL_INSERT, payload: {}});
+        dispatch({type: POST_NOTICE_INSERT, payload: {}});
     }
 }
+
+export const callGetNoticeAPI = () => {
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice`;
+
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            }
+        })
+            .then(response => response.json());
+        if (result.status === 200) {
+            console.log('[callGetNoticeAPI] callGetApprovalAPI RESULT : ', result);
+            dispatch({type: GET_NOTICE, payload: result.data});
+        }
+    }
+}
+
+export const callGetNoticeDetailAPI = ({no}) => {
+
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/detail?no=${no}`;
+
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            }
+        })
+            .then(response => response.json());
+        if (result.status === 200) {
+            console.log('[callGetNoticeAPI] callGetApprovalAPI RESULT : ', result);
+            dispatch({type: GET_NOTICE, payload: result.data});
+        }
+    }
+}
+

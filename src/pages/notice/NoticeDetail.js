@@ -1,6 +1,21 @@
 import './noticeCSS/NoticeDetail.css'
+import {useParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {callGetNoticeDetailAPI} from "../../apis/NoticeAPICalls";
+import {useEffect} from "react";
 
 function NoticeDetail() {
+    const {no} = useParams();
+    const dispatch = useDispatch();
+
+
+    useEffect(
+        () => {
+            dispatch(callGetNoticeDetailAPI({
+                no: no}
+            ))
+        }
+    )
 
     return (
         <div className="sc-eJDSGI jbTrWz">
@@ -67,7 +82,7 @@ function NoticeDetail() {
                         </div>
                     </div>
                     <div class="wboard-detail-btn-wrap">
-                        <a class="wz button" href="#this" onclick="moveList()">목록으로 돌아가기</a>
+                        <a class="wz button" href="#this" onClick="moveList()">목록으로 돌아가기</a>
                     </div>
                 </div>
             </div>

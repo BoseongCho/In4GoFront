@@ -9,7 +9,7 @@ function NoticeSidebar() {
                     <div className="sc-cUEOzv vOjXz">
                         <div className="sc-cOxWqc fvSRZD">
                             {/*<a className="sc-bCfvAP hUZOlz" href="/company/info"></a>*/}
-                            <NavLink className="sc-bCfvAP hUZOlz" to={"notice"}>공지사항</NavLink>
+                            <NavLink className="sc-bCfvAP hUZOlz" to={"/notice"}>공지사항</NavLink>
                             <NavLink className="sc-bCfvAP hUZOlz" to={"detail"}>Test2</NavLink>
                             {/*<a className="sc-bCfvAP hUZOlz active" href="/company/notice" aria-current="page">자유 게시판</a>*/}
                         </div>

@@ -1,7 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {decodeJwt} from '../../../utils/tokenUtils';
 import {useEffect, useState, useRef} from 'react';
-import {useNavigate} from "react-router-dom";
 import NavCSS from '../taskCSS/Content.module.css'
 import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';

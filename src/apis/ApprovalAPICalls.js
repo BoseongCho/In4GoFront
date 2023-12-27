@@ -1,4 +1,4 @@
-import {DELETE_APPROVAL_BOOKMARK, GET_APPROVAL, POST_APPROVAL_BOOKMARK} from "../modules/ApprovalModule";
+import {GET_APPROVAL} from "../modules/ApprovalModule";
 import {GET_APPROVAL_SEARCHINFO, POST_APPROVAL_INSERT} from "../modules/ModalModule";
 
 
