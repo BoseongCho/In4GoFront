@@ -154,7 +154,7 @@ function ApprovalSubmit() {
                                                 </div>
                                             </div>
                                             <button className="btn btn-primary mt-3"
-                                                    onClick={onClickSearchHandler}>조회
+                                                    onCli   ck={onClickSearchHandler}>조회
                                             </button>
                                         </div>
                                     </div>

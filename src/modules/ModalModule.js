@@ -7,6 +7,8 @@ export const CLEAR_INFO = 'modal/CLEAR_INFO';
 export const GET_APPROVAL_SEARCHINFO = 'modal/GET_APPROVAL_SEARCHINFO';
 export const POST_APPROVAL_INSERT = 'modal/POST_APPROVAL_INSERT';
 export const RE_WRITE_MODAL = 'modal/RE_WRITE';
+export const POST_NOTICE_INSERT = 'modal/POST_NOTICE_INSERT'
+
 
 const modalReducer = handleActions(
     {
@@ -24,6 +26,9 @@ const modalReducer = handleActions(
         },
         [RE_WRITE_MODAL] : (state, payload) =>{
             return payload
+        },
+        [POST_NOTICE_INSERT] : (state, payload) =>{
+            return payload;
         }
     },
     initialState

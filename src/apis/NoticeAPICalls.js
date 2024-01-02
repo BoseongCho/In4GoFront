@@ -1,4 +1,5 @@
-import {GET_NOTICE, POST_NOTICE_INSERT} from "../modules/NoticeModule";
+import {GET_NOTICE} from "../modules/NoticeModule";
+import {POST_NOTICE_INSERT} from "../modules/ModalModule";
 
 export const callPostNoticeAPI = (form, formData) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/insert`;
@@ -27,7 +28,7 @@ export const callPostNoticeAPI = (form, formData) => {
                     })
                 }
             })
-        console.log('insert 성공...');
+        console.log('공지 등록 성공...');
         dispatch({type: POST_NOTICE_INSERT, payload: {}});
     }
 }
@@ -47,7 +48,7 @@ export const callGetNoticeAPI = () => {
         })
             .then(response => response.json());
         if (result.status === 200) {
-            console.log('[callGetNoticeAPI] callGetApprovalAPI RESULT : ', result);
+            console.log('[callGetNoticeAPI] callGetNoticeAPI RESULT : ', result);
             dispatch({type: GET_NOTICE, payload: result.data});
         }
     }
@@ -69,7 +70,6 @@ export const callGetNoticeDetailAPI = ({no}) => {
         })
             .then(response => response.json());
         if (result.status === 200) {
-            console.log('[callGetNoticeAPI] callGetApprovalAPI RESULT : ', result);
             dispatch({type: GET_NOTICE, payload: result.data});
         }
     }
