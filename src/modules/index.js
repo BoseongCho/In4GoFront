@@ -4,6 +4,7 @@ import memberReducer from "./MemberModule";
 import dutyReducer from "./DutyModule";
 import dutyDetailReducer from "./DutyDetailModule";
 import modalReducer from "./ModalModule";
+import noticeReducer from "./NoticeModule";
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     approvalReducer,
     dutyReducer,
     dutyDetailReducer,
-    modalReducer
+    modalReducer,
+    noticeReducer
 })
 
 export default rootReducer;

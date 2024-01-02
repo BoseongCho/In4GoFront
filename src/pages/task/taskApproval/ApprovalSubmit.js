@@ -1,7 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {decodeJwt} from '../../../utils/tokenUtils';
 import {useEffect, useState, useRef} from 'react';
-import {useNavigate} from "react-router-dom";
 import NavCSS from '../taskCSS/Content.module.css'
 import PlainStar from '../../../components/icon/PlainStar';
 import BlueStar from '../../../components/icon/BlueStar';
@@ -155,7 +154,7 @@ function ApprovalSubmit() {
                                                 </div>
                                             </div>
                                             <button className="btn btn-primary mt-3"
-                                                    onClick={onClickSearchHandler}>조회
+                                                    onCli   ck={onClickSearchHandler}>조회
                                             </button>
                                         </div>
                                     </div>

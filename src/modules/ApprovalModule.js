@@ -7,7 +7,6 @@ export const POST_APPROVAL_BOOKMARK = 'approval/POST_APPROVAL_BOOKMARK';
 export const DELETE_APPROVAL_BOOKMARK = 'approval/DELETE_APPROVAL_BOOKMARK';
 export const RE_WRITE_PAGE = 'approval/RE_WRITE_PAGE';
 //type을 문자열 상수로 만들어 주는 것.
-export const CHANGE_BOOKMARK_VALUE = 'approval/CHANGE_BOOKMARK_VALUE'
 
 const approvalReducer = handleActions(
     {

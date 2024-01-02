@@ -1,25 +1,41 @@
 import './noticeCSS/NoticeDetail.css'
+import {NavLink, useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {callGetNoticeDetailAPI} from "../../apis/NoticeAPICalls";
+import {useEffect} from "react";
 
 function NoticeDetail() {
+    const {no} = useParams();
+    const dispatch = useDispatch();
+    const detail = useSelector(state => state.noticeReducer);
+
+    useEffect(
+        () => {
+            dispatch(callGetNoticeDetailAPI({no: no}
+            ))
+        }, []
+    )
 
     return (
-        <div className="sc-eJDSGI jbTrWz">
+    <div className="sc-eJDSGI jbTrWz">
         <div id="newContainer">
             <div id="wBoardWrap">
                 <div className="wboard-wrap">
                     <div className="wboard-detail-content">
                         <div className="article-top">
-                            <p className="title">[서비스 안내] 카카오 장애로 인한 일부 서비스 장애 안내 (2022.10.15)</p>
+                            <p className="title">{detail.title}</p>
+                            {console.log(detail)}
                             <div className="info">
                                 {/*<em className="user-img" style={{backgroundImage:url(https://static.wadiz.kr/assets/icon/apple-touch-icon.png)}}></em>*/}
-                                <span className="user-info">김민수
-    						<br/>2022.10.15</span>
+                                <span
+                                    className="user-info">
+                                    {detail.noticeMem?.departmentCode.departmentName}부 {detail.noticeMem?.memName}
+                                    <br/>{detail.writeDate}</span>
                                 <hr/>
 
                             </div>
                         </div>
-                        <div className="inner-contents">
-                            <p>안녕하세요.</p><p>사장 김민수 입니다.&nbsp;</p><p><br/></p><p>현재(2022.10.15) &nbsp;<u>카카오 장애로 인해 와디즈 서비스 일부 이용이 원활하지 않은 상황</u>이니, 서비스 이용에 참고 부탁드립니다. &nbsp;&nbsp;</p><p><strong>[이용 불가 서비스]</strong></p><ul><li>카카오 로그인&nbsp;</li><li>펀딩/스토어 신규 주소지 입력 (우편번호 검색)&nbsp;</li><li>카카오톡 자동 알림&nbsp;</li></ul><p><br/></p><p>카카오 복구 즉시 정상 이용 가능할 예정이니, 잠시만 기다려주세요.</p><p>와디즈에서도 지속적으로 모니터링하며, 빠르게 대응할 수 있도록 하겠습니다.&nbsp;</p><p><br/></p><p>불편을 드려 죄송합니다.&nbsp;</p><p>와디즈 드림</p>
+                        <div className="inner-contents" dangerouslySetInnerHTML={{__html: detail.content}}>
                         </div>
                         <div className="article-attached">
                             <ul>
@@ -55,8 +71,8 @@ function NoticeDetail() {
                                             <em className="category">공지</em>
                                             [서비스 안내] 결제일 및 환불 정책 개편 안내
                                         </p>
-                                        <p class="info">
-                        <span class="date">
+                                        <p className="info">
+                        <span className="date">
                           와디즈
                           2023.10.18
                         </span></p>
@@ -66,13 +82,13 @@ function NoticeDetail() {
                             </ul>
                         </div>
                     </div>
-                    <div class="wboard-detail-btn-wrap">
-                        <a class="wz button" href="#this" onclick="moveList()">목록으로 돌아가기</a>
+                    <div className="wboard-detail-btn-wrap">
+                        <NavLink to="/notice"><span className="wz button" href="#this">목록으로 돌아가기</span></NavLink>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 );
 }
 

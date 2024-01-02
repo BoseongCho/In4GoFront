@@ -90,9 +90,10 @@ function NoticeModal() {
 
         // document.querySelector('input[type=file]').value = null;
 
-        dispatch(callPostNoticeAPI(form, formData));
-        // .then(() => {document.querySelector('#closeModal').click()});
-        // window.alert('등록 성공');
+        dispatch(callPostNoticeAPI(form, formData))
+        .then(() => {document.querySelector('#closeModal').click()});
+        window.alert('등록 성공');
+        window.location.reload();
     }
 
     return (
