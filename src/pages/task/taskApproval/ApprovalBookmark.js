@@ -84,7 +84,7 @@ function ApprovalBookmark() {
                                 <div>
                                     <div className={`${NavCSS["d-flex-space"]} ${NavCSS["bread-title"]}`}>
                                         <div className={`${NavCSS["title"]}`}>
-                                            <span className={`${NavCSS["breadcrumb"]}`}>결재 /</span>
+                                            <span className={`${NavCSS["breadcrumb"]}`}> /</span>
                                             <h2 className={`${NavCSS["h3"]}`}>북마크함</h2>
                                         </div>
                                     </div>

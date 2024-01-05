@@ -7,7 +7,8 @@ import {useEffect} from "react";
 function NoticeDetail() {
     const {no} = useParams();
     const dispatch = useDispatch();
-    const detail = useSelector(state => state.noticeReducer);
+    const detailList = useSelector(state => state.noticeReducer);
+    const detail = detailList[1]; //본문 index [1],[2]는 다음 글 / 이전 글
 
     useEffect(
         () => {
@@ -23,19 +24,19 @@ function NoticeDetail() {
                 <div className="wboard-wrap">
                     <div className="wboard-detail-content">
                         <div className="article-top">
-                            <p className="title">{detail.title}</p>
+                            <p className="title">{detail?.title}</p>
                             {console.log(detail)}
                             <div className="info">
                                 {/*<em className="user-img" style={{backgroundImage:url(https://static.wadiz.kr/assets/icon/apple-touch-icon.png)}}></em>*/}
                                 <span
                                     className="user-info">
-                                    {detail.noticeMem?.departmentCode.departmentName}부 {detail.noticeMem?.memName}
-                                    <br/>{detail.writeDate}</span>
+                                    {detail?.noticeMem.departmentCode.departmentName}부 {detail?.noticeMem.memName}
+                                    <br/>{detail?.writeDate}</span>
                                 <hr/>
 
                             </div>
                         </div>
-                        <div className="inner-contents" dangerouslySetInnerHTML={{__html: detail.content}}>
+                        <div className="inner-contents" dangerouslySetInnerHTML={{__html: detail?.content}}>
                         </div>
                         <div className="article-attached">
                             <ul>
@@ -55,12 +56,11 @@ function NoticeDetail() {
                                     <a href="/web/wboard/newsBoardDetail/8610?headWordId=&amp;cPage=1">
                                         <p className="title">
                                             <em className="category">공지</em>
-                                            [약관/정책] 개인정보처리방침 개정 안내 [와디즈]
+                                            {detailList[0]?.title}
                                         </p>
                                         <p className="info">
                         <span className="date">
-                          와디즈
-                          2023.11.13
+                          {detailList[0]?.writeDate.substring(0,11)}
                         </span></p>
                                     </a>
                                 </li>
@@ -69,12 +69,11 @@ function NoticeDetail() {
                                     <a href="/web/wboard/newsBoardDetail/8591?headWordId=&amp;cPage=1">
                                         <p className="title">
                                             <em className="category">공지</em>
-                                            [서비스 안내] 결제일 및 환불 정책 개편 안내
+                                            {detailList[2]?.title}
                                         </p>
                                         <p className="info">
                         <span className="date">
-                          와디즈
-                          2023.10.18
+                          {detailList[2]?.writeDate.substring(0,11)}
                         </span></p>
                                     </a>
                                 </li>

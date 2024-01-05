@@ -28,7 +28,6 @@ export const callPostNoticeAPI = (form, formData) => {
                     })
                 }
             })
-        console.log('공지 등록 성공...');
         dispatch({type: POST_NOTICE_INSERT, payload: {}});
     }
 }

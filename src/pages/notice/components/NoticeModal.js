@@ -92,7 +92,7 @@ function NoticeModal() {
 
         dispatch(callPostNoticeAPI(form, formData))
         .then(() => {document.querySelector('#closeModal').click()});
-        window.alert('등록 성공');
+        window.alert('등록 되었습니다.');
         window.location.reload();
     }
 
