@@ -81,7 +81,7 @@ function Navbar() {
                 <div style={{ width: "128px", height: "50px" }}>
                   <NavLink to="/">
                     <img
-                      src="./images/INSAGO.png"
+                      src={process.env.PUBLIC_URL+ "/images/INSAGO.png"}
                       alt=""
                       width={150}
                       height={70}

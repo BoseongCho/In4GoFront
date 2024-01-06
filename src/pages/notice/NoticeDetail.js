@@ -1,5 +1,5 @@
 import './noticeCSS/NoticeDetail.css'
-import {NavLink, useParams} from "react-router-dom";
+import {Navigate, NavLink, useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {callGetNoticeDetailAPI} from "../../apis/NoticeAPICalls";
 import {useEffect} from "react";
@@ -7,15 +7,21 @@ import {useEffect} from "react";
 function NoticeDetail() {
     const {no} = useParams();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const detailList = useSelector(state => state.noticeReducer);
     const detail = detailList[1]; //본문 index [1],[2]는 다음 글 / 이전 글
+    const onClickDetailHandler = (a) => {
+        navigate(`/notice/detail/${detailList[a]?.noticeNo}`);
+        window.location.reload();
+        }
 
     useEffect(
         () => {
             dispatch(callGetNoticeDetailAPI({no: no}
             ))
-        }, []
+        }, [no]
     )
+
 
     return (
     <div className="sc-eJDSGI jbTrWz">
@@ -25,7 +31,6 @@ function NoticeDetail() {
                     <div className="wboard-detail-content">
                         <div className="article-top">
                             <p className="title">{detail?.title}</p>
-                            {console.log(detail)}
                             <div className="info">
                                 {/*<em className="user-img" style={{backgroundImage:url(https://static.wadiz.kr/assets/icon/apple-touch-icon.png)}}></em>*/}
                                 <span
@@ -52,21 +57,8 @@ function NoticeDetail() {
                         <div className="wboard-list">
                             <ul>
 
-                                <li>
-                                    <a href="/web/wboard/newsBoardDetail/8610?headWordId=&amp;cPage=1">
-                                        <p className="title">
-                                            <em className="category">공지</em>
-                                            {detailList[0]?.title}
-                                        </p>
-                                        <p className="info">
-                        <span className="date">
-                          {detailList[0]?.writeDate.substring(0,11)}
-                        </span></p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/web/wboard/newsBoardDetail/8591?headWordId=&amp;cPage=1">
+                                <li onClick={() => onClickDetailHandler(2)}>
+                                    <a>
                                         <p className="title">
                                             <em className="category">공지</em>
                                             {detailList[2]?.title}
@@ -74,6 +66,19 @@ function NoticeDetail() {
                                         <p className="info">
                         <span className="date">
                           {detailList[2]?.writeDate.substring(0,11)}
+                        </span></p>
+                                    </a>
+                                </li>
+
+                                <li onClick={() => onClickDetailHandler(0)}>
+                                    <a >
+                                        <p className="title">
+                                            <em className="category">공지</em>
+                                            {detailList[0]?.title}
+                                        </p>
+                                        <p className="info">
+                        <span className="date">
+                          {detailList[0]?.writeDate.substring(0,11)}
                         </span></p>
                                     </a>
                                 </li>
