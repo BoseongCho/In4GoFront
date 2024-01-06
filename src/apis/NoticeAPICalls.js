@@ -47,7 +47,6 @@ export const callGetNoticeAPI = () => {
         })
             .then(response => response.json());
         if (result.status === 200) {
-            console.log('[callGetNoticeAPI] callGetNoticeAPI RESULT : ', result);
             dispatch({type: GET_NOTICE, payload: result.data});
         }
     }
