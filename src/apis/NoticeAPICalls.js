@@ -1,4 +1,4 @@
-import {GET_NOTICE} from "../modules/NoticeModule";
+import {GET_NOTICE, GET_NOTICE_DETAIL} from "../modules/NoticeModule";
 import {POST_NOTICE_INSERT} from "../modules/ModalModule";
 
 export const callPostNoticeAPI = (form, formData) => {
@@ -68,7 +68,7 @@ export const callGetNoticeDetailAPI = ({no}) => {
         })
             .then(response => response.json());
         if (result.status === 200) {
-            dispatch({type: GET_NOTICE, payload: result.data});
+            dispatch({type: GET_NOTICE_DETAIL, payload: result.data});
         }
     }
 }
