@@ -11,7 +11,7 @@ function NoticeMain() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const noticeList = useSelector(state => state.noticeReducer);
+    const noticeList = useSelector(state => state.noticeReducer.noticeList);
 
     useEffect(() => {
         dispatch(callGetNoticeAPI());
@@ -20,6 +20,7 @@ function NoticeMain() {
     return (
         <>
             <div className="sc-eJDSGI jbTrWz">
+                {console.log(noticeList)}
                 <div>
                     <div></div>
                     <div className="sc-gGvHcT cWMamh bread-title">
@@ -51,7 +52,7 @@ function NoticeMain() {
                             <>
                                 {
                                     Array.isArray(noticeList) && noticeList.map((n, index) => (
-                                        <tr key ={n.noticeNo} onClick={() => navigate(`detail/${n.noticeNo}`)}>
+                                        <tr key ={index} onClick={() => navigate(`detail/${n.noticeNo}`)}>
                                             <td className="wide">
                                                 <div data-toggle="modal">
                                                     {n.isPinned == 1 && <span>📌</span>}

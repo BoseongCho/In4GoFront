@@ -8,8 +8,8 @@ function NoticeDetail() {
     const {no} = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const detailList = useSelector(state => state.noticeReducer);
-    const detail = detailList[1]; //본문 index [1],[2]는 다음 글 / 이전 글
+    const detailList = useSelector(state => state.noticeReducer.noticeDetail);
+    const detail = detailList && detailList[1]; //본문 index [1],[2]는 다음 글 / 이전 글
     const onClickDetailHandler = (a) => {
         navigate(`/notice/detail/${detailList[a]?.noticeNo}`);
         window.location.reload();
@@ -36,7 +36,9 @@ function NoticeDetail() {
                                 <span
                                     className="user-info">
                                     {detail?.noticeMem.departmentCode.departmentName}부 {detail?.noticeMem.memName}
-                                    <br/>{detail?.writeDate}</span>
+                                    <br/>{detail?.writeDate}
+                                    <br/>조회수 : {detail?.readCount}
+                                </span>
                                 <hr/>
 
                             </div>
@@ -61,11 +63,11 @@ function NoticeDetail() {
                                     <a>
                                         <p className="title">
                                             <em className="category">공지</em>
-                                            {detailList[2]?.title}
+                                            {detailList && detailList[2].title}
                                         </p>
                                         <p className="info">
                         <span className="date">
-                          {detailList[2]?.writeDate.substring(0,11)}
+                          {detailList && detailList[2].writeDate.substring(0,11)}
                         </span></p>
                                     </a>
                                 </li>
@@ -74,11 +76,11 @@ function NoticeDetail() {
                                     <a >
                                         <p className="title">
                                             <em className="category">공지</em>
-                                            {detailList[0]?.title}
+                                            {detailList && detailList[0].title}
                                         </p>
                                         <p className="info">
                         <span className="date">
-                          {detailList[0]?.writeDate.substring(0,11)}
+                          {detailList && detailList[0].writeDate.substring(0,11)}
                         </span></p>
                                     </a>
                                 </li>
