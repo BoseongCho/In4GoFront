@@ -88,7 +88,7 @@ function NoticeModal() {
             }
         }
 
-        // document.querySelector('input[type=file]').value = null;
+        document.querySelector('input[type=file]').value = null;
 
         dispatch(callPostNoticeAPI(form, formData))
         .then(() => {document.querySelector('#closeModal').click()});

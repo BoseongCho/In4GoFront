@@ -3,7 +3,7 @@ import {POST_NOTICE_INSERT} from "../modules/ModalModule";
 
 export const callPostNoticeAPI = (form, formData) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/insert`;
-    const requestURL2 = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/insertDoc`;
+    const requestURL2 = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/insertFile`;
 
     return async (dispatch, getState) => {
 
@@ -18,7 +18,7 @@ export const callPostNoticeAPI = (form, formData) => {
             .then(response => response.json())
             .then(response => {
                 if (formData.entries().next().value) {
-                    formData.append("docCode", response.data);
+                    formData.append("noticeNo", response.data);
                     fetch(requestURL2, {
                         method: "POST",
                         headers: {
