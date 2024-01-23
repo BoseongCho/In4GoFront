@@ -1,7 +1,7 @@
 import './noticeCSS/NoticeDetail.css'
 import {Navigate, NavLink, useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {callGetNoticeDetailAPI} from "../../apis/NoticeAPICalls";
+import {callGetNoticeDetailAPI, callGetNoticeFileDownload} from "../../apis/NoticeAPICalls";
 import {useEffect} from "react";
 import ToggleArrow from "../../components/icon/ToggleArrow";
 
@@ -17,7 +17,13 @@ function NoticeDetail() {
     }
 
     const onClickFilesToggleHandler = () => {
+        let a = window.document.querySelector('.file_attachments_inner').style.display;
+        if (a === 'none') window.document.querySelector('.file_attachments_inner').style.display = 'block';
+        else window.document.querySelector('.file_attachments_inner').style.display = 'none';
+    }
 
+    const DownloadHandler = (url) => {
+        dispatch(callGetNoticeFileDownload(url));
     }
 
 
@@ -49,47 +55,36 @@ function NoticeDetail() {
 
                                 </div>
                             </div>
-                            { detail?.noticeFileList.length != 0 &&
-                            <>
-                            <div className="file_attachments expanded">
-                                <div className="file_attachments_summary">
-                                    <button onClick={onClickFilesToggle}>
-                                        <ToggleArrow />
-                                    </button>
-                                    <span className="total_count"> 첨부
-                                        <strong>1</strong>개
+                            {detail?.noticeFileList.length != 0 &&
+                                <div className="file_attachments">
+                                    <div className="file_attachments_summary">
+                                        <button onClick={onClickFilesToggleHandler}>
+                                            <ToggleArrow/>
+                                        </button>
+                                        <span className="total_count"> 첨부파일
+                                        <strong>{detail?.noticeFileList.length}</strong>개
                                     </span>
-                                    <span className="total_volume">
+                                        <span className="total_volume">
                                         <span className="blind">전체 용량</span>253B</span>
+                                    </div>
+                                    <div className="file_attachments_inner" style={{display: 'none'}}>
+                                        {detail?.noticeFileList.map((f, index) => (
+                                            //   <div key={file.name}>{file.name}</div>
+                                            <ul key={f.fileNo} className="file_list" onClick={() => DownloadHandler(f.url)}>
+                                                <li className="file_item">
+                                                    <div className="file_info_area">
+                                                        <div className="file_title_wrap">
+                                                            <strong className="file_title">
+                                                                <span className="text">{f.fileName}</span>
+                                                            </strong>
+                                                            <span className="file_volume"> {f.fileSize}</span></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        ))
+                                        }
+                                    < /div>
                                 </div>
-                                <div className="file_attachments_inner">
-                                    <ul className="file_list">
-                                        <li className="file_item"><a className="file_link"
-                                                                     href="https://download.mail.naver.com/file/download/each/?attachType=normal&amp;mailSN=20234&amp;attachIndex=2&amp;virus=1&amp;domain=mail.naver.com">
-                                            <div className="file_thumbnail">
-                                                <em className="svg_file_txt">
-
-                                                </em></div>
-                                            <div className="file_info_area">
-                                                <div className="file_title_wrap"><strong className="file_title">
-                                                    <span className="text">리나 한국플랜</span>
-                                                    <span className="file_extension">.txt</span></strong>
-                                                    <span className="file_volume">0.2KB</span></div>
-                                            </div>
-                                        </a>
-                                            <div className="task"><a className="button_svg_download"
-                                                                     href="https://download.mail.naver.com/file/download/each/?attachType=normal&amp;mailSN=20234&amp;attachIndex=2&amp;virus=1&amp;domain=mail.naver.com"><span
-                                                className="blind">다운로드</span></a>
-                                                <button type="button" className="button_svg_mybox"><span
-                                                    className="blind">MYBOX 저장</span></button>
-                                                <button type="button" className="button_svg_delete"><span
-                                                    className="blind">삭제</span></button>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            </>
                             }
                             <div className="inner-contents" dangerouslySetInnerHTML={{__html: detail?.content}}>
                             </div>

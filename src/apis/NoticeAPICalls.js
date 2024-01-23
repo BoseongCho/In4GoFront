@@ -73,3 +73,31 @@ export const callGetNoticeDetailAPI = ({no}) => {
     }
 }
 
+
+export const callGetNoticeFileDownload = (url) =>{
+    console.log('url', url);
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:7777/api/v1/notice/download?url=${url}`;
+
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            }
+        }).then(response => response.blob())
+          .then(blob => {
+              // Blob 데이터를 가지고 Blob URL 생성
+              const url = URL.createObjectURL(blob);
+
+              // 가상 링크를 생성하여 다운로드
+              const link = document.createElement('a');
+              link.href = url;
+              console.log("url", url);
+
+              // Content-Disposition 헤더에서 파일 이름 가져오기
+              // cosnt contentDisposition = response.hear
+          })
+        }
+}
